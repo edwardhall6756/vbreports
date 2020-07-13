@@ -72,6 +72,9 @@
     <Reference Include="ExportData">
       <HintPath>\\fbpa1fs1\it\Development\Upgrade\Libraries\ExportData\bin\Release\ExportData.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -107,6 +110,12 @@
       <DependentUpon>AccountQuery.vb</DependentUpon>
     </Compile>
     <Compile Include="AccountQuery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AFFfix.Designer.vb">
+      <DependentUpon>AFFfix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AFFfix.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangeClientNumber.Designer.vb">
@@ -279,6 +288,9 @@
     <EmbeddedResource Include="AccountQuery.resx">
       <DependentUpon>AccountQuery.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AFFfix.resx">
+      <DependentUpon>AFFfix.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeClientNumber.resx">
       <DependentUpon>ChangeClientNumber.vb</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +392,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Hopstarter-Soft-Scraps-Document-Microsoft-Excel.ico" />

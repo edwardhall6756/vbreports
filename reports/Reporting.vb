@@ -115,5 +115,7 @@ Public Class Reporting
         OpenChild(My.Forms.PCDDeletedReport)
     End Sub
 
-
+    Private Sub AFFInputFixToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AFFInputFixToolStripMenuItem.Click
+        OpenChild(My.Forms.AFFfix)
+    End Sub
 End Class

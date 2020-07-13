@@ -51,13 +51,13 @@ Partial Class Reporting
         Me.LastARCStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenericQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccountQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AFFInputFixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-        Me.AFFInputFixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -226,6 +226,12 @@ Partial Class Reporting
         Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AccountQueryToolStripMenuItem.Text = "Account Query"
         '
+        'AFFInputFixToolStripMenuItem
+        '
+        Me.AFFInputFixToolStripMenuItem.Name = "AFFInputFixToolStripMenuItem"
+        Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AFFInputFixToolStripMenuItem.Text = "AFF Input Fix"
+        '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
@@ -262,12 +268,6 @@ Partial Class Reporting
         '
         Me.stopwatch.Enabled = True
         Me.stopwatch.Interval = 1
-        '
-        'AFFInputFixToolStripMenuItem
-        '
-        Me.AFFInputFixToolStripMenuItem.Name = "AFFInputFixToolStripMenuItem"
-        Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AFFInputFixToolStripMenuItem.Text = "AFF Input Fix"
         '
         'Reporting
         '
