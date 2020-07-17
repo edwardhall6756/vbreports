@@ -118,4 +118,8 @@ Public Class Reporting
     Private Sub AFFInputFixToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AFFInputFixToolStripMenuItem.Click
         OpenChild(My.Forms.AFFfix)
     End Sub
+
+	Private Sub TSISMERestrictionRemovalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSISMERestrictionRemovalToolStripMenuItem.Click
+		OpenChild(My.Forms.TSISMERestrictionRemoval)
+	End Sub
 End Class

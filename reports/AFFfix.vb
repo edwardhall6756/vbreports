@@ -37,8 +37,8 @@ Public Class AFFfix
         revised = OpenFileDialog1.FileName
         outfile = OpenFileDialog1.SafeFileName
         revised = revised.Replace(outfile, String.Empty)
-        outfile = revised + "revised\" + outfile
-        Loadrawfile()
+		outfile = revised + "Revised\" + outfile
+		Loadrawfile()
     End Sub
 
     Private Sub Openjson_Click(sender As Object, e As EventArgs) Handles openjson.Click
@@ -109,9 +109,13 @@ Public Class AFFfix
         Next
         jsonstring = jsonstring.Replace(vbLf, [String].Empty)
         jsonstring = jsonstring.Replace(vbCr, [String].Empty)
-        jsonstring = jsonstring.Replace(vbTab, [String].Empty)
-        Dim File As System.IO.StreamWriter
-        File = My.Computer.FileSystem.OpenTextFileWriter(outfile, True)
+		jsonstring = jsonstring.Replace(vbTab, [String].Empty)
+		jsonstring = jsonstring.Substring(0, jsonstring.Length - 1) + "]"
+		Dim File As System.IO.StreamWriter
+		If (Not System.IO.Directory.Exists(revised + "Revised\")) Then
+			System.IO.Directory.CreateDirectory(revised + "Revised\")
+		End If
+		File = My.Computer.FileSystem.OpenTextFileWriter(outfile, True)
         File.Write(jsonstring)
         File.Close()
     End Sub
