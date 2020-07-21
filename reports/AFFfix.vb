@@ -41,10 +41,10 @@ Public Class AFFfix
 		Loadrawfile()
     End Sub
 
-    Private Sub Openjson_Click(sender As Object, e As EventArgs) Handles openjson.Click
-        Loadrawfile()
-    End Sub
-    Private Sub Loadrawfile()
+	Private Sub Openjson_Click(sender As Object, e As EventArgs)
+		Loadrawfile()
+	End Sub
+	Private Sub Loadrawfile()
         dt1.Clear()
         Dim fs As FileStream
         Dim reader As StreamReader
@@ -102,13 +102,14 @@ Public Class AFFfix
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Saveoutfile()
     End Sub
-    Private Sub Saveoutfile()
-        Dim jsonstring As String = "["
-        For x As Integer = 0 To dt2.Rows.Count - 1
-            jsonstring += dt2.Rows(x).Item(1).ToString
-        Next
-        jsonstring = jsonstring.Replace(vbLf, [String].Empty)
-        jsonstring = jsonstring.Replace(vbCr, [String].Empty)
+	Private Sub Saveoutfile()
+		Cursor = Cursors.WaitCursor
+		Dim jsonstring As String = "["
+		For x As Integer = 0 To dt2.Rows.Count - 1
+			jsonstring += dt2.Rows(x).Item(1).ToString
+		Next
+		jsonstring = jsonstring.Replace(vbLf, [String].Empty)
+		jsonstring = jsonstring.Replace(vbCr, [String].Empty)
 		jsonstring = jsonstring.Replace(vbTab, [String].Empty)
 		jsonstring = jsonstring.Substring(0, jsonstring.Length - 1) + "]"
 		Dim File As System.IO.StreamWriter
@@ -116,7 +117,9 @@ Public Class AFFfix
 			System.IO.Directory.CreateDirectory(revised + "Revised\")
 		End If
 		File = My.Computer.FileSystem.OpenTextFileWriter(outfile, True)
-        File.Write(jsonstring)
-        File.Close()
-    End Sub
+		File.Write(jsonstring)
+		File.Close()
+		Cursor = Cursors.Default
+		MessageBox.Show("Cleaned input file: " + outfile + " is complete.  You can process this file", "Clean up Complete")
+	End Sub
 End Class

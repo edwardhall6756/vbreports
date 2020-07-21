@@ -138,4 +138,13 @@
   <data name="startdate" xml:space="preserve">
     <value>Start Date Field - Enter just the date, the time will set to 00:00:00.00 automatically.</value>
   </data>
+  <data name="AFF_Clean_UP_Clean_File" xml:space="preserve">
+    <value>Clean the selected file to only the data we will process</value>
+  </data>
+  <data name="AFF_Clean_UP_Save_Cleaned_Json" xml:space="preserve">
+    <value>Creates the revised folder and saves the cleaned file in it</value>
+  </data>
+  <data name="AFF_Clean_UP_Select_File" xml:space="preserve">
+    <value>Select the AFF input file you need to clean up</value>
+  </data>
 </root>

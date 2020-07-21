@@ -65,6 +65,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Clean the selected file to only the data we will process.
+        '''</summary>
+        Friend Shared ReadOnly Property AFF_Clean_UP_Clean_File() As String
+            Get
+                Return ResourceManager.GetString("AFF_Clean_UP_Clean_File", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Creates the revised folder and saves the cleaned file in it.
+        '''</summary>
+        Friend Shared ReadOnly Property AFF_Clean_UP_Save_Cleaned_Json() As String
+            Get
+                Return ResourceManager.GetString("AFF_Clean_UP_Save_Cleaned_Json", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Select the AFF input file you need to clean up.
+        '''</summary>
+        Friend Shared ReadOnly Property AFF_Clean_UP_Select_File() As String
+            Get
+                Return ResourceManager.GetString("AFF_Clean_UP_Select_File", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to End Date Field - Enter just the date, the time will set to 23:59:59.000 automatically..
         '''</summary>
         Friend Shared ReadOnly Property enddate() As String

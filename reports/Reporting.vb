@@ -7,8 +7,9 @@ Public Class Reporting
     Public Thour As Integer
     Private Sub Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         IsMdiContainer = True
-        If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
-    End Sub
+		If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
+		If Environment.UserName = "mary.albert" Then ToolsToolStripMenuItem.Visible = True
+	End Sub
 
     Private Sub PPACreditAuditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PPACreditAuditToolStripMenuItem1.Click
 
@@ -119,7 +120,11 @@ Public Class Reporting
         OpenChild(My.Forms.AFFfix)
     End Sub
 
-	Private Sub TSISMERestrictionRemovalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSISMERestrictionRemovalToolStripMenuItem.Click
+	Private Sub TSISMERestrictionRemovalToolStripMenuItem_Click(sender As Object, e As EventArgs) 
 		OpenChild(My.Forms.TSISMERestrictionRemoval)
+	End Sub
+
+	Private Sub AFFFileCleanUpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AFFFileCleanUpToolStripMenuItem.Click
+		OpenChild(My.Forms.AFFfix)
 	End Sub
 End Class

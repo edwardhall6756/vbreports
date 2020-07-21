@@ -1,28 +1,28 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Reporting
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Form overrides dispose to clean up the component list.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+	'Required by the Windows Form Designer
+	Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+	'NOTE: The following procedure is required by the Windows Form Designer
+	'It can be modified using the Windows Form Designer.  
+	'Do not modify it using the code editor.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
 		Me.components = New System.ComponentModel.Container()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reporting))
 		Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -47,6 +47,7 @@ Partial Class Reporting
 		Me.PendingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ProcessedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PDCDeletedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.AFFFileCleanUpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.LastARCStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.GenericQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,7 +59,6 @@ Partial Class Reporting
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-		Me.TSISMERestrictionRemovalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -91,11 +91,13 @@ Partial Class Reporting
 		'
 		'PPACreditAuditToolStripMenuItem
 		'
+		Me.PPACreditAuditToolStripMenuItem.AutoToolTip = True
 		Me.PPACreditAuditToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-		Me.PPACreditAuditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem1, Me.SettlementsToBe2ndReviewedToolStripMenuItem1, Me.ExeterSifPifToolStripMenuItem, Me.OperationalExecptionsToolStripMenuItem, Me.DebtSettlementToolStripMenuItem, Me.LetterLinkExceptionToolStripMenuItem, Me.PDCDeletedToolStripMenuItem})
+		Me.PPACreditAuditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem1, Me.SettlementsToBe2ndReviewedToolStripMenuItem1, Me.ExeterSifPifToolStripMenuItem, Me.OperationalExecptionsToolStripMenuItem, Me.DebtSettlementToolStripMenuItem, Me.LetterLinkExceptionToolStripMenuItem, Me.PDCDeletedToolStripMenuItem, Me.AFFFileCleanUpToolStripMenuItem})
 		Me.PPACreditAuditToolStripMenuItem.Name = "PPACreditAuditToolStripMenuItem"
 		Me.PPACreditAuditToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
 		Me.PPACreditAuditToolStripMenuItem.Text = "&Reports"
+		Me.PPACreditAuditToolStripMenuItem.ToolTipText = "Select Reports"
 		'
 		'PPACreditAuditToolStripMenuItem1
 		'
@@ -201,9 +203,15 @@ Partial Class Reporting
 		Me.PDCDeletedToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
 		Me.PDCDeletedToolStripMenuItem.Text = "PDC Deleted"
 		'
+		'AFFFileCleanUpToolStripMenuItem
+		'
+		Me.AFFFileCleanUpToolStripMenuItem.Name = "AFFFileCleanUpToolStripMenuItem"
+		Me.AFFFileCleanUpToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+		Me.AFFFileCleanUpToolStripMenuItem.Text = "AFF File Clean UP"
+		'
 		'ToolsToolStripMenuItem
 		'
-		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.TSISMERestrictionRemovalToolStripMenuItem})
+		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
 		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -212,32 +220,34 @@ Partial Class Reporting
 		'LastARCStatusToolStripMenuItem
 		'
 		Me.LastARCStatusToolStripMenuItem.Name = "LastARCStatusToolStripMenuItem"
-		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.LastARCStatusToolStripMenuItem.Text = "&Last ARC Status"
 		'
 		'GenericQueryToolStripMenuItem
 		'
 		Me.GenericQueryToolStripMenuItem.Name = "GenericQueryToolStripMenuItem"
-		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.GenericQueryToolStripMenuItem.Text = "Generic Query"
 		'
 		'AccountQueryToolStripMenuItem
 		'
 		Me.AccountQueryToolStripMenuItem.Name = "AccountQueryToolStripMenuItem"
-		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.AccountQueryToolStripMenuItem.Text = "Account Query"
 		'
 		'AFFInputFixToolStripMenuItem
 		'
 		Me.AFFInputFixToolStripMenuItem.Name = "AFFInputFixToolStripMenuItem"
-		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
+		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
 		Me.AFFInputFixToolStripMenuItem.Text = "AFF Input Fix"
 		'
 		'CloseToolStripMenuItem
 		'
+		Me.CloseToolStripMenuItem.AutoToolTip = True
 		Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
 		Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
 		Me.CloseToolStripMenuItem.Text = "&Close"
+		Me.CloseToolStripMenuItem.ToolTipText = "Close open form"
 		'
 		'HelpToolStripMenuItem
 		'
@@ -270,12 +280,6 @@ Partial Class Reporting
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
 		'
-		'TSISMERestrictionRemovalToolStripMenuItem
-		'
-		Me.TSISMERestrictionRemovalToolStripMenuItem.Name = "TSISMERestrictionRemovalToolStripMenuItem"
-		Me.TSISMERestrictionRemovalToolStripMenuItem.Size = New System.Drawing.Size(223, 22)
-		Me.TSISMERestrictionRemovalToolStripMenuItem.Text = "TSI SME Restriction Removal"
-		'
 		'Reporting
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -300,37 +304,37 @@ Partial Class Reporting
 
 	End Sub
 	Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents PPACreditAuditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PPACreditAuditToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents SettlementsToBe2ndReviewedToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
-    Public WithEvents stopwatch As Timer
-    Friend WithEvents ExeterSifPifToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OperationalExecptionsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TimezonesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents Inventory3160DaysToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Inventory6190DaysToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents First30DaysToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InventoryWorkGapToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DialerContactedInLessThan8DaysToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ContactsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IinstructionsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DebtSettlementToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LastARCStatusToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GenericQueryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents AccountQueryToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LetterLinkExceptionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PendingToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProcessedToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PDCDeletedToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AFFInputFixToolStripMenuItem As ToolStripMenuItem
-	Friend WithEvents TSISMERestrictionRemovalToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
+	Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
+	Friend WithEvents MenuStrip1 As MenuStrip
+	Friend WithEvents PPACreditAuditToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents PPACreditAuditToolStripMenuItem1 As ToolStripMenuItem
+	Friend WithEvents SettlementsToBe2ndReviewedToolStripMenuItem1 As ToolStripMenuItem
+	Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+	Public WithEvents stopwatch As Timer
+	Friend WithEvents ExeterSifPifToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents OperationalExecptionsToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents TimezonesToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+	Friend WithEvents Inventory3160DaysToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents Inventory6190DaysToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents First30DaysToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents InventoryWorkGapToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents DialerContactedInLessThan8DaysToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ContactsToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents IinstructionsToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents DebtSettlementToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents LastARCStatusToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents GenericQueryToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
+	Friend WithEvents AccountQueryToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents LetterLinkExceptionToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents PendingToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ProcessedToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents PDCDeletedToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents AFFInputFixToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents AFFFileCleanUpToolStripMenuItem As ToolStripMenuItem
 End Class
