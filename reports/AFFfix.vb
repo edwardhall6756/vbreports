@@ -2,9 +2,9 @@
 Imports System.Text.RegularExpressions
 Public Class AFFfix
     Private kpe(4) As String
-    Private delim As String
-    Private findthis As String = Chr(34) + "originator" + Chr(34) + ":{" + Chr(34) + "servicer" + Chr(34)
-    Private rplcthis As String = Chr(34) + "originator" + Chr(34) + ":" + Chr(34) + "creditor" + Chr(34)
+	Private delim As String               '"originator":{"servicer":"886d8f5f-0f0b-446b-b1f1-b3c2e1c72a0d"}
+	Private findthis As String = Chr(34) + "originator" + Chr(34) + ":{" + Chr(34) + "servicer" + Chr(34) + ":" + Chr(34) + "886d8f5f-0f0b-446b-b1f1-b3c2e1c72a0d" + Chr(34) + "}"
+	Private rplcthis As String = Chr(34) + "originator" + Chr(34) + ":" + Chr(34) + "creditor" + Chr(34)
     Private outfile As String
     Dim revised As String
     Dim dt1 As New DataTable
@@ -87,9 +87,9 @@ Public Class AFFfix
 
             For y As Integer = 0 To 3
                 If rowstring.ToUpper.Contains(kpe(y).ToString.ToUpper) Then
-                    rowstring.Replace(findthis, rplcthis)
-                    rowstring.Remove(InStr(rplcthis, rowstring) + Len(rplcthis) + 1, 37)
-                    dt2.Rows.Add(x.ToString, rowstring)
+					rowstring = rowstring.Replace(findthis, rplcthis)
+					'rowstring = rowstring.Remove(InStr(rplcthis, rowstring) + Len(rplcthis) + 1, 37)
+					dt2.Rows.Add(x.ToString, rowstring)
                     Exit For
                 End If
             Next y
