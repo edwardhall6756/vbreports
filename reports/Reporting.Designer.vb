@@ -59,6 +59,7 @@ Partial Class Reporting
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
+		Me.DateMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -211,7 +212,7 @@ Partial Class Reporting
 		'
 		'ToolsToolStripMenuItem
 		'
-		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem})
+		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
 		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -280,6 +281,12 @@ Partial Class Reporting
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
 		'
+		'DateMaintenanceToolStripMenuItem
+		'
+		Me.DateMaintenanceToolStripMenuItem.Name = "DateMaintenanceToolStripMenuItem"
+		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.DateMaintenanceToolStripMenuItem.Text = "Date Maintenance"
+		'
 		'Reporting
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -337,4 +344,5 @@ Partial Class Reporting
 	Friend WithEvents PDCDeletedToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents AFFInputFixToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents AFFFileCleanUpToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents DateMaintenanceToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -135,6 +135,12 @@
     <Compile Include="collect2000DataSet.vb">
       <DependentUpon>collect2000DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DateMaintenance.Designer.vb">
+      <DependentUpon>DateMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DateMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DebtSettlement.Designer.vb">
       <DependentUpon>DebtSettlement.vb</DependentUpon>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeClientNumber.resx">
       <DependentUpon>ChangeClientNumber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateMaintenance.resx">
+      <DependentUpon>DateMaintenance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DebtSettlement.resx">
       <DependentUpon>DebtSettlement.vb</DependentUpon>

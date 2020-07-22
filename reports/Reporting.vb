@@ -24,8 +24,9 @@ Public Class Reporting
         CloseChildren()
         cf.MdiParent = Me
         cf.Dock = DockStyle.Fill
-        cf.WindowState = FormWindowState.Maximized
-        cf.ShowIcon = False
+		cf.WindowState = FormWindowState.Maximized
+		cf.ControlBox = False
+		cf.ShowIcon = False
         cf.Show()
     End Sub
 
@@ -126,5 +127,9 @@ Public Class Reporting
 
 	Private Sub AFFFileCleanUpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AFFFileCleanUpToolStripMenuItem.Click
 		OpenChild(My.Forms.AFFfix)
+	End Sub
+
+	Private Sub DateMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DateMaintenanceToolStripMenuItem.Click
+		OpenChild(My.Forms.DateMaintenance)
 	End Sub
 End Class
