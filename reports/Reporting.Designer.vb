@@ -48,18 +48,21 @@ Partial Class Reporting
 		Me.ProcessedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.PDCDeletedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AFFFileCleanUpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.AutobuilderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.CountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.Count2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.LastARCStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.GenericQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AccountQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AFFInputFixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.DateMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-		Me.DateMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -94,7 +97,7 @@ Partial Class Reporting
 		'
 		Me.PPACreditAuditToolStripMenuItem.AutoToolTip = True
 		Me.PPACreditAuditToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-		Me.PPACreditAuditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem1, Me.SettlementsToBe2ndReviewedToolStripMenuItem1, Me.ExeterSifPifToolStripMenuItem, Me.OperationalExecptionsToolStripMenuItem, Me.DebtSettlementToolStripMenuItem, Me.LetterLinkExceptionToolStripMenuItem, Me.PDCDeletedToolStripMenuItem, Me.AFFFileCleanUpToolStripMenuItem})
+		Me.PPACreditAuditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem1, Me.SettlementsToBe2ndReviewedToolStripMenuItem1, Me.ExeterSifPifToolStripMenuItem, Me.OperationalExecptionsToolStripMenuItem, Me.DebtSettlementToolStripMenuItem, Me.LetterLinkExceptionToolStripMenuItem, Me.PDCDeletedToolStripMenuItem, Me.AFFFileCleanUpToolStripMenuItem, Me.AutobuilderToolStripMenuItem})
 		Me.PPACreditAuditToolStripMenuItem.Name = "PPACreditAuditToolStripMenuItem"
 		Me.PPACreditAuditToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
 		Me.PPACreditAuditToolStripMenuItem.Text = "&Reports"
@@ -210,6 +213,25 @@ Partial Class Reporting
 		Me.AFFFileCleanUpToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
 		Me.AFFFileCleanUpToolStripMenuItem.Text = "AFF File Clean UP"
 		'
+		'AutobuilderToolStripMenuItem
+		'
+		Me.AutobuilderToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CountToolStripMenuItem, Me.Count2ToolStripMenuItem})
+		Me.AutobuilderToolStripMenuItem.Name = "AutobuilderToolStripMenuItem"
+		Me.AutobuilderToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
+		Me.AutobuilderToolStripMenuItem.Text = "Autobuilder"
+		'
+		'CountToolStripMenuItem
+		'
+		Me.CountToolStripMenuItem.Name = "CountToolStripMenuItem"
+		Me.CountToolStripMenuItem.Size = New System.Drawing.Size(229, 22)
+		Me.CountToolStripMenuItem.Text = " AutoBuilder Counts"
+		'
+		'Count2ToolStripMenuItem
+		'
+		Me.Count2ToolStripMenuItem.Name = "Count2ToolStripMenuItem"
+		Me.Count2ToolStripMenuItem.Size = New System.Drawing.Size(229, 22)
+		Me.Count2ToolStripMenuItem.Text = "AutoBuilder Counts With HCI"
+		'
 		'ToolsToolStripMenuItem
 		'
 		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem})
@@ -221,26 +243,32 @@ Partial Class Reporting
 		'LastARCStatusToolStripMenuItem
 		'
 		Me.LastARCStatusToolStripMenuItem.Name = "LastARCStatusToolStripMenuItem"
-		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
 		Me.LastARCStatusToolStripMenuItem.Text = "&Last ARC Status"
 		'
 		'GenericQueryToolStripMenuItem
 		'
 		Me.GenericQueryToolStripMenuItem.Name = "GenericQueryToolStripMenuItem"
-		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
 		Me.GenericQueryToolStripMenuItem.Text = "Generic Query"
 		'
 		'AccountQueryToolStripMenuItem
 		'
 		Me.AccountQueryToolStripMenuItem.Name = "AccountQueryToolStripMenuItem"
-		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
 		Me.AccountQueryToolStripMenuItem.Text = "Account Query"
 		'
 		'AFFInputFixToolStripMenuItem
 		'
 		Me.AFFInputFixToolStripMenuItem.Name = "AFFInputFixToolStripMenuItem"
-		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
 		Me.AFFInputFixToolStripMenuItem.Text = "AFF Input Fix"
+		'
+		'DateMaintenanceToolStripMenuItem
+		'
+		Me.DateMaintenanceToolStripMenuItem.Name = "DateMaintenanceToolStripMenuItem"
+		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+		Me.DateMaintenanceToolStripMenuItem.Text = "Date Maintenance"
 		'
 		'CloseToolStripMenuItem
 		'
@@ -280,12 +308,6 @@ Partial Class Reporting
 		'
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
-		'
-		'DateMaintenanceToolStripMenuItem
-		'
-		Me.DateMaintenanceToolStripMenuItem.Name = "DateMaintenanceToolStripMenuItem"
-		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-		Me.DateMaintenanceToolStripMenuItem.Text = "Date Maintenance"
 		'
 		'Reporting
 		'
@@ -345,4 +367,7 @@ Partial Class Reporting
 	Friend WithEvents AFFInputFixToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents AFFFileCleanUpToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents DateMaintenanceToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents AutobuilderToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents CountToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents Count2ToolStripMenuItem As ToolStripMenuItem
 End Class

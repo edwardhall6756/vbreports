@@ -21,13 +21,20 @@ Public Class Reporting
         OpenChild(My.Forms.settlement)
     End Sub
     Private Sub OpenChild(cf As Form)
-        CloseChildren()
-        cf.MdiParent = Me
+		CloseChildren()
+
+		cf.MdiParent = Me
         cf.Dock = DockStyle.Fill
 		cf.WindowState = FormWindowState.Maximized
 		cf.ControlBox = False
 		cf.ShowIcon = False
-        cf.Show()
+		cf.FormBorderStyle = FormBorderStyle.None
+		cf.HelpButton = False
+		cf.Icon = Nothing
+		cf.MaximizeBox = False
+		cf.MinimizeBox = False
+
+		cf.Show()
     End Sub
 
     Private Sub CloseChildren()
@@ -131,5 +138,13 @@ Public Class Reporting
 
 	Private Sub DateMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DateMaintenanceToolStripMenuItem.Click
 		OpenChild(My.Forms.DateMaintenance)
+	End Sub
+
+	Private Sub CountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CountToolStripMenuItem.Click
+		OpenChild(My.Forms.autobuildercount)
+	End Sub
+
+	Private Sub Count2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Count2ToolStripMenuItem.Click
+		OpenChild(My.Forms.autobuildercount2)
 	End Sub
 End Class

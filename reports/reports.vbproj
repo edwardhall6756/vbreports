@@ -115,6 +115,18 @@
     <Compile Include="AFFfix.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="autobuildercount.Designer.vb">
+      <DependentUpon>autobuildercount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autobuildercount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="autobuildercount2.Designer.vb">
+      <DependentUpon>autobuildercount2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autobuildercount2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BrokenPromises.Designer.vb">
       <DependentUpon>BrokenPromises.vb</DependentUpon>
     </Compile>
@@ -299,6 +311,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AFFfix.resx">
       <DependentUpon>AFFfix.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="autobuildercount.resx">
+      <DependentUpon>autobuildercount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="autobuildercount2.resx">
+      <DependentUpon>autobuildercount2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BrokenPromises.resx">
       <DependentUpon>BrokenPromises.vb</DependentUpon>
