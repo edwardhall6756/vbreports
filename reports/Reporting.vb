@@ -10,17 +10,15 @@ Public Class Reporting
 		If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
 		If Environment.UserName = "mary.albert" Then ToolsToolStripMenuItem.Visible = True
 	End Sub
+	Private Sub PPACreditAuditToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
-    Private Sub PPACreditAuditToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PPACreditAuditToolStripMenuItem1.Click
+		OpenChild(My.Forms.PPACreditAudit)
+	End Sub
+	Private Sub SettlementsToBe2ndReviewedToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
-        OpenChild(My.Forms.PPACreditAudit)
-    End Sub
-
-    Private Sub SettlementsToBe2ndReviewedToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SettlementsToBe2ndReviewedToolStripMenuItem1.Click
-
-        OpenChild(My.Forms.settlement)
-    End Sub
-    Private Sub OpenChild(cf As Form)
+		OpenChild(My.Forms.Settlement)
+	End Sub
+	Private Sub OpenChild(cf As Form)
 		CloseChildren()
 
 		cf.MdiParent = Me
@@ -146,5 +144,70 @@ Public Class Reporting
 
 	Private Sub Count2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Count2ToolStripMenuItem.Click
 		OpenChild(My.Forms.autobuildercount2)
+	End Sub
+
+	Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+		OpenChild(My.Forms.NewAgent)
+	End Sub
+
+	Private Sub Recording2WeekSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Recording2WeekSummaryToolStripMenuItem.Click
+		OpenChild(My.Forms.recordings2weeks)
+	End Sub
+
+	Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+		OpenChild(My.Forms.Recordingcount)
+	End Sub
+
+	Private Sub ExeterBankruptcyClosesToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.ExeterBankruptcyCloses)
+	End Sub
+
+	Private Sub ArrangementsGreaterThan45DaysToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.Arrang45days)
+	End Sub
+	Private Sub PPAExceptionToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.PPAException)
+	End Sub
+	Private Sub AbortToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AbortToolStripMenuItem.Click
+		Dim rd1 As ReportData = ActiveMdiChild.Controls().Item("ReportData1")
+		rd1.StopQuery()
+		rd1.StopExport()
+	End Sub
+	Private Sub PPACreaditExceptionToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.PPACredit1)
+	End Sub
+	Private Sub PPAAuditToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.PPAAudit)
+	End Sub
+	Private Sub ToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem6.Click
+		OpenChild(My.Forms.PPAAudit)
+	End Sub
+
+	Private Sub ToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem7.Click
+		OpenChild(My.Forms.PPAException)
+	End Sub
+
+	Private Sub ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem8.Click
+		OpenChild(My.Forms.PPACredit1)
+	End Sub
+
+	Private Sub ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem9.Click
+		OpenChild(My.Forms.PPACreditAudit)
+	End Sub
+
+	Private Sub ToolStripMenuItem10_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem10.Click
+		OpenChild(My.Forms.Removed737Q)
+	End Sub
+
+	Private Sub ToolStripMenuItem11_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem11.Click
+		OpenChild(My.Forms.Arrang45days)
+	End Sub
+
+	Private Sub ToolStripMenuItem12_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem12.Click
+		OpenChild(My.Forms.ExeterBankruptcyCloses)
+	End Sub
+
+	Private Sub SettlementsToBe2ndReviewedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettlementsToBe2ndReviewedToolStripMenuItem.Click
+		OpenChild(My.Forms.Settlement)
 	End Sub
 End Class

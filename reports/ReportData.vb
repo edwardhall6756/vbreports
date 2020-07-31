@@ -11,8 +11,8 @@ Public Class ReportData
     Public shfmt As String
     Public vsql As String
     Public ext As String
-    Public rptdte As String = Format(Today, "yyyyMMdd").ToString
-    Private ExportThread As System.Threading.Thread
+	Public rptdte As String = "_" + Format(Today, "yyyyMMdd").ToString
+	Private ExportThread As System.Threading.Thread
     Private QueryThread As System.Threading.Thread
     Private ex As ExportData = Nothing
 
@@ -136,9 +136,10 @@ Public Class ReportData
             dt1.Clear()
             ExportButton.Enabled = False
             cn.Open()
-            da1.Fill(dt1)
-            da1.Dispose()
-            cn.Close()
+			da1.Fill(dt1)
+
+UserAborted: da1.Dispose()
+			cn.Close()
             StopWatch.Stop()
             StopWatch.Enabled = False
             WriteTime()
@@ -172,8 +173,31 @@ Public Class ReportData
 
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        ext = ".xlsx"
-        FileTextBox.Text = Path.ChangeExtension(FileTextBox.Text, ext)
-    End Sub
+	Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+		ext = ".xlsx"
+		FileTextBox.Text = Path.ChangeExtension(FileTextBox.Text, ext)
+	End Sub
+	Public Sub StopQuery()
+		QueryThread.Abort()
+		ActivityTextBox.Text = "Query Aborted by user."
+		StopWatch.Stop()
+		StopWatch.Enabled = False
+		WriteTime()
+		Tmilli = 0
+		Tsec = 0
+		Tmin = 0
+		Thour = 0
+
+	End Sub
+	Public Sub StopExport()
+		ExportThread.Abort()
+		ActivityTextBox.Text = "Export Aborted by user."
+		StopWatch.Stop()
+		StopWatch.Enabled = False
+		WriteTime()
+		Tmilli = 0
+		Tsec = 0
+		Tmin = 0
+		Thour = 0
+	End Sub
 End Class

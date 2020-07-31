@@ -84,8 +84,9 @@ Public Class LastARCStatus
 
             da1.Parameters.AddWithValue("@filenum", Filebox.Text)
             da1.Parameters.AddWithValue("@olddata", CurrentARC.Text)
-            da1.Parameters.AddWithValue("@newdata", NewARC.Text)
-            da1.ExecuteNonQuery()
+			da1.Parameters.AddWithValue("@newdata", NewARC.Text)
+			cn.Open()
+			da1.ExecuteNonQuery()
             da1.Dispose()
             AfterButton.Enabled = False
             ViewData(dt2)
@@ -102,14 +103,29 @@ Public Class LastARCStatus
 
         ViewData(dt1)
     End Sub
-
-    Private Sub Accountbox_TextChanged(sender As Object, e As EventArgs) Handles Accountbox.TextChanged
-        BeforeButton.Enabled = True
-    End Sub
+	Private Sub Reset()
+		NewARC.Text = ""
+		CurrentARC.Text = ""
+		Filebox.Text = ""
+		DateBox.Text = ""
+		prebox.Text = ""
+		dt1.Clear()
+		dt2.Clear()
+	End Sub
+	Private Sub Accountbox_TextChanged(sender As Object, e As EventArgs) Handles Accountbox.TextChanged
+		BeforeButton.Enabled = True
+		Reset()
+	End Sub
 
     Private Sub NewARC_TextChanged(sender As Object, e As EventArgs) Handles NewARC.TextChanged
         If Len(NewARC.Text) = 6 Then
             AfterButton.Enabled = True
         End If
     End Sub
+
+	Private Sub AfterButton_Click(sender As Object, e As EventArgs) Handles AfterButton.Click
+		CheckForIllegalCrossThreadCalls = False
+
+		UpdtData(dt1)
+	End Sub
 End Class
