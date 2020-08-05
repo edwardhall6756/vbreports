@@ -82,6 +82,17 @@ Namespace My
                 Return CType(Me("Excelchecked"),Boolean)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=fbpa1sqlapril;Initial Catalog=collect2000;Integrated Security=True;Co"& _ 
+            "nnect Timeout=0")>  _
+        Public ReadOnly Property Testdb() As String
+            Get
+                Return CType(Me("Testdb"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

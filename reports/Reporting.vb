@@ -210,4 +210,8 @@ Public Class Reporting
 	Private Sub SettlementsToBe2ndReviewedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettlementsToBe2ndReviewedToolStripMenuItem.Click
 		OpenChild(My.Forms.Settlement)
 	End Sub
+
+	Private Sub ChangeCustomerNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeCustomerNumberToolStripMenuItem.Click
+		OpenChild(My.Forms.ChangeClientNumber)
+	End Sub
 End Class
