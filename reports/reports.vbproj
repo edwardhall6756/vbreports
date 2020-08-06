@@ -226,6 +226,12 @@
     <Compile Include="Exception9.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FeeCodeChg.Designer.vb">
+      <DependentUpon>FeeCodeChg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FeeCodeChg.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Help.Designer.vb">
       <DependentUpon>Help.vb</DependentUpon>
     </Compile>
@@ -416,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exception9.resx">
       <DependentUpon>Exception9.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FeeCodeChg.resx">
+      <DependentUpon>FeeCodeChg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.vb</DependentUpon>

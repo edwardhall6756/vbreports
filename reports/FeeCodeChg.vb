@@ -2,7 +2,7 @@
 Imports System.IO
 Imports Microsoft.Office.Interop
 
-Public Class ChangeClientNumber
+Public Class FeeCodeChg
 	Dim Tmilli As Integer
 	Dim Tsec As Integer
 	Dim Tmin As Integer
@@ -20,80 +20,23 @@ Public Class ChangeClientNumber
 	Dim ocol As Integer
 	Dim lines() As String
 	Dim cn As SqlConnection
-	Private vsql = "--declare @c cursor
---set @c = cursor  for 
---query to identify accounts to move to new customer code---
---select  master.number, master.customer, [dbo].[ELH20200708AFF].[Move to Code] --Set this to the new customer code
---from master with (nolock) 
---join dbo.ELH20200708AFF on (dbo.ELH20200708AFF.[File Number] = master.number)
---where
---select * from [dbo].[mpn10142019cap]
---[dbo].[mpn10142019cap]
---22641
-----
+	Private vsql = "declare @oldfee as varchar(3)
+declare @counter as integer
+set @oldfee=(select m.feecode
+from master m with(nolock)
+where number=@number)
 
-set nocount on
+ set @counter=(select count(*) from master(nolock) where number=@number)
+if @counter=1 begin
+update master
+set FeeCode=@newcode
+where number=@number
+ set @counter=(select count(*) from master(nolock) where number=@number)
 
---declare @number integer
---declare @oldcode varchar(10)
---declare @newcode varchar(10)
-declare @count integer
-
-set @count = 0
-
---open @c
-
---fetch next from @c into @number, @oldcode, @newcode
-
---while @@fetch_status = 0
-
-begin
-
-	set @count += 1 -- @count + 1
-	print cast(@number as varchar) + ' count: ' + cast(@count as varchar)
-	PRINT ' Old #' +@oldcode
-PRINT ' New #' +@NEWcode
-
-
-	INSERT INTO notes
-		(number, created, user0, [action], result, comment)
-		VALUES
-		(@number, getdate(), 'SYSTEM', 'CUST', 'CHNG', 'CUSTOMER CHANGED | ' + @oldcode + ' | ' + @newcode)
-
-
-	update master
-	set customer = @newcode
-	from master with (rowlock)
-	where number = @number
-
-
-	update pdc
-	set customer = @newcode
-	from pdc with (rowlock) 
-	where pdc.number = @number
-	
-
-	update promises
-	set customer = @newcode
-	from promises with (rowlock) 
-	where promises.acctid = @number
-	
-	update payhistory 
-	set payhistory.customer = @newcode
-	from payhistory with (rowlock) 
-	where payhistory.number = @number
-
-
-
-	--fetch next from @c into @number, @oldcode, @newcode
-
-end
-
-print 'Total accts updated: ' + cast(@count as varchar)
-
---close @c
---deallocate @c
-"
+insert into notes
+(number,created,user0,action,result,comment)
+values(@number,Getdate(),@user0,'CO','CO','Fee Schedule changed from '+ @oldfee + ' to '+@newcode)
+end"
 	Private Sub Stopwatch_Tick(sender As Object, e As EventArgs) Handles StopWatch.Tick
 		Tmilli += 1
 		If Tmilli = 100 Then
@@ -160,8 +103,6 @@ print 'Total accts updated: ' + cast(@count as varchar)
 		Next
 		Cursor = Cursors.Default
 		ACount.Text = count
-		'FileColumn.Maximum = col
-		'OldColumn.Maximum = col
 		StopWatch.Stop()
 		StopWatch.Enabled = False
 		WriteTime()
@@ -169,7 +110,7 @@ print 'Total accts updated: ' + cast(@count as varchar)
 		Tsec = 0
 		Tmin = 0
 		Thour = 0
-		ActivityTextBox.Text = "Seccussful excel load"
+		ActivityTextBox.Text = "Successful excel load"
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -190,12 +131,11 @@ print 'Total accts updated: ' + cast(@count as varchar)
 
 	Private Sub MakeChange_Click(sender As Object, e As EventArgs) Handles MakeChange.Click
 		CheckForIllegalCrossThreadCalls = False
-		ActivityTextBox.Text = "Changing old# to " + TextBox1.Text
+		ActivityTextBox.Text = "Changing Fee Code"
 
 		WriteTime()
 		StopWatch.Enabled = True
-		QueryThread = New System.Threading.Thread(AddressOf RunQuery
-)
+		QueryThread = New System.Threading.Thread(AddressOf RunQuery)
 		QueryThread.Start()
 	End Sub
 	Public Sub RunQuery()
@@ -209,19 +149,16 @@ print 'Total accts updated: ' + cast(@count as varchar)
 			cn.Open()
 			Dim cm1 As SqlCommand = New SqlCommand(vsql, cn)
 			cm1.Parameters.AddWithValue("@number", "000000000")
-			cm1.Parameters.AddWithValue("@oldcode", "0")
-			cm1.Parameters.AddWithValue("@newcode", TextBox1.Text)
+			cm1.Parameters.AddWithValue("@newcode", "000")
+			cm1.Parameters.AddWithValue("@user0", Initials.Text)
+
 			For Each row As DataGridViewRow In DataGridView1.Rows
 				row.Selected = True
 				DataGridView1.FirstDisplayedScrollingRowIndex = row.Index
-				Dim obj(row.Cells.Count - 1) As Object
-
 				cm1.Parameters("@number").Value = row.Cells(fcol).Value
-					cm1.Parameters("@oldcode").Value = row.Cells(ocol).Value
-					cm1.ExecuteNonQuery()
-
-					WriteTime()
-
+				cm1.Parameters("@newcode").Value = row.Cells(ocol).Value
+				cm1.ExecuteNonQuery()
+				WriteTime()
 				row.Selected = False
 			Next
 			cn.Close()
@@ -232,12 +169,12 @@ print 'Total accts updated: ' + cast(@count as varchar)
 			Tsec = 0
 			Tmin = 0
 			Thour = 0
-			ActivityTextBox.Text = "Finished Changing customer numbers."
+			ActivityTextBox.Text = "Finished ChangingFee Code."
 
 		Catch ex As System.Exception
 			Cursor = Cursors.Default
 			MessageBox.Show(ex.Message)
-			ActivityTextBox.Text = "Error in Changing customer numbers."
+			ActivityTextBox.Text = "Error in Changing Fee Code."
 		End Try
 		Cursor = Cursors.Default
 
@@ -245,22 +182,14 @@ print 'Total accts updated: ' + cast(@count as varchar)
 	Private Function Mkchgenable() As Boolean
 		If fcol = ocol Then
 			Return False
-
-		ElseIf TextBox1.Text = "" Then
-			Return False
 		ElseIf DataGridView1.Rows.Count = 0 Then
 			Return False
-		ElseIf prod.Checked = testdb.checked Then
+		ElseIf prod.Checked = testdb.Checked Then
 			Return False
 		Else
 			Return True
 		End If
 	End Function
-
-	Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-		MakeChange.Enabled = Mkchgenable()
-	End Sub
-
 	Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 		fcol = ComboBox1.SelectedIndex
 		MakeChange.Enabled = Mkchgenable()
@@ -297,4 +226,7 @@ print 'Total accts updated: ' + cast(@count as varchar)
 		MakeChange.Enabled = Mkchgenable()
 	End Sub
 
+	Private Sub FeeCodeChg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 End Class

@@ -214,4 +214,8 @@ Public Class Reporting
 	Private Sub ChangeCustomerNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeCustomerNumberToolStripMenuItem.Click
 		OpenChild(My.Forms.ChangeClientNumber)
 	End Sub
+
+	Private Sub FeeCodeChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FeeCodeChangeToolStripMenuItem.Click
+		OpenChild(My.Forms.FeeCodeChg)
+	End Sub
 End Class

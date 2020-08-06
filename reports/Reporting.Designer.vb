@@ -68,13 +68,14 @@ Partial Class Reporting
 		Me.AccountQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AFFInputFixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.DateMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ChangeCustomerNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-		Me.ChangeCustomerNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.FeeCodeChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -313,7 +314,7 @@ Partial Class Reporting
 		'
 		'ToolsToolStripMenuItem
 		'
-		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem, Me.ChangeCustomerNumberToolStripMenuItem})
+		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem, Me.ChangeCustomerNumberToolStripMenuItem, Me.FeeCodeChangeToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
 		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -348,6 +349,12 @@ Partial Class Reporting
 		Me.DateMaintenanceToolStripMenuItem.Name = "DateMaintenanceToolStripMenuItem"
 		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.DateMaintenanceToolStripMenuItem.Text = "Date Maintenance"
+		'
+		'ChangeCustomerNumberToolStripMenuItem
+		'
+		Me.ChangeCustomerNumberToolStripMenuItem.Name = "ChangeCustomerNumberToolStripMenuItem"
+		Me.ChangeCustomerNumberToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.ChangeCustomerNumberToolStripMenuItem.Text = "Change Customer Number"
 		'
 		'CloseToolStripMenuItem
 		'
@@ -388,11 +395,11 @@ Partial Class Reporting
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
 		'
-		'ChangeCustomerNumberToolStripMenuItem
+		'FeeCodeChangeToolStripMenuItem
 		'
-		Me.ChangeCustomerNumberToolStripMenuItem.Name = "ChangeCustomerNumberToolStripMenuItem"
-		Me.ChangeCustomerNumberToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-		Me.ChangeCustomerNumberToolStripMenuItem.Text = "Change Customer Number"
+		Me.FeeCodeChangeToolStripMenuItem.Name = "FeeCodeChangeToolStripMenuItem"
+		Me.FeeCodeChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.FeeCodeChangeToolStripMenuItem.Text = "Fee Code Change"
 		'
 		'Reporting
 		'
@@ -467,4 +474,5 @@ Partial Class Reporting
 	Friend WithEvents ToolStripMenuItem12 As ToolStripMenuItem
 	Friend WithEvents SettlementsToBe2ndReviewedToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents ChangeCustomerNumberToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents FeeCodeChangeToolStripMenuItem As ToolStripMenuItem
 End Class
