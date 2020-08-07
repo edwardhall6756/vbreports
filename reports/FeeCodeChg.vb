@@ -226,7 +226,4 @@ end"
 		MakeChange.Enabled = Mkchgenable()
 	End Sub
 
-	Private Sub FeeCodeChg_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-	End Sub
 End Class

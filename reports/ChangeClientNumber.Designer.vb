@@ -28,8 +28,6 @@ Partial Class ChangeClientNumber
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.ACount = New System.Windows.Forms.TextBox()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
-		Me.Label2 = New System.Windows.Forms.Label()
 		Me.MakeChange = New System.Windows.Forms.Button()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.ActivityTextBox = New System.Windows.Forms.TextBox()
@@ -59,13 +57,11 @@ Partial Class ChangeClientNumber
 		'DataGridView1
 		'
 		Me.DataGridView1.AllowUserToAddRows = False
-		Me.DataGridView1.AllowUserToDeleteRows = False
 		Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
 		Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
 		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.DataGridView1.Location = New System.Drawing.Point(39, 82)
 		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.ReadOnly = True
 		Me.DataGridView1.Size = New System.Drawing.Size(738, 150)
 		Me.DataGridView1.TabIndex = 1
 		'
@@ -89,22 +85,6 @@ Partial Class ChangeClientNumber
 		Me.Label1.Size = New System.Drawing.Size(52, 13)
 		Me.Label1.TabIndex = 3
 		Me.Label1.Text = "Accounts"
-		'
-		'TextBox1
-		'
-		Me.TextBox1.Location = New System.Drawing.Point(111, 345)
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(147, 20)
-		Me.TextBox1.TabIndex = 4
-		'
-		'Label2
-		'
-		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(29, 348)
-		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(39, 13)
-		Me.Label2.TabIndex = 5
-		Me.Label2.Text = "New #"
 		'
 		'MakeChange
 		'
@@ -169,9 +149,9 @@ Partial Class ChangeClientNumber
 		Me.Label4.AutoSize = True
 		Me.Label4.Location = New System.Drawing.Point(24, 316)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(82, 13)
+		Me.Label4.Size = New System.Drawing.Size(79, 13)
 		Me.Label4.TabIndex = 71
-		Me.Label4.Text = "Old # COLUMN"
+		Me.Label4.Text = "Customer Code"
 		'
 		'ComboBox1
 		'
@@ -234,8 +214,6 @@ Partial Class ChangeClientNumber
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.GroupBox1)
 		Me.Controls.Add(Me.MakeChange)
-		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.TextBox1)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.ACount)
 		Me.Controls.Add(Me.DataGridView1)
@@ -259,8 +237,6 @@ Partial Class ChangeClientNumber
 	Friend WithEvents OpenFileDialog1 As OpenFileDialog
 	Friend WithEvents ACount As TextBox
 	Friend WithEvents Label1 As Label
-	Friend WithEvents TextBox1 As TextBox
-	Friend WithEvents Label2 As Label
 	Friend WithEvents MakeChange As Button
 	Friend WithEvents GroupBox1 As GroupBox
 	Friend WithEvents ActivityTextBox As TextBox
