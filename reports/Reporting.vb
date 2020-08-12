@@ -1,11 +1,8 @@
 ﻿Imports System.Windows.Forms
 
 Public Class Reporting
-    Public Tmilli As Integer
-    Public Tsec As Integer
-    Public Tmin As Integer
-    Public Thour As Integer
-    Private Sub Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+	Public customerlist As String
+	Private Sub Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         IsMdiContainer = True
 		If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
 		If Environment.UserName = "mary.albert" Then ToolsToolStripMenuItem.Visible = True
@@ -217,5 +214,9 @@ Public Class Reporting
 
 	Private Sub FeeCodeChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FeeCodeChangeToolStripMenuItem.Click
 		OpenChild(My.Forms.FeeCodeChg)
+	End Sub
+
+	Private Sub CustomerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerToolStripMenuItem.Click
+		OpenChild(My.Forms.SelectCustomer)
 	End Sub
 End Class

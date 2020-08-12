@@ -40,8 +40,9 @@ Public Class SQLExport
 
     Private Sub QueryButton_Click(sender As Object, e As EventArgs) Handles QueryButton.Click
         CheckForIllegalCrossThreadCalls = False
-        vsql = SQLBox.Text
-        ActivityTextBox.Text = "Running Query."
+		vsql = SQLBox.Text.Replace("@customer", TextBox1.Text)
+
+		ActivityTextBox.Text = "Running Query."
         WriteTime()
         StopWatch.Enabled = True
         QueryThread = New System.Threading.Thread(AddressOf RunQuery
@@ -57,9 +58,12 @@ Public Class SQLExport
                 .ConnectionString = My.Settings.collect2000ConnectionString
             }
             Dim da1 As SqlDataAdapter = New SqlDataAdapter(vsql, cn.ConnectionString)
-            da1.SelectCommand.CommandTimeout = 1800
-            dt1.Clear()
-            ExportButton.Enabled = False
+			da1.SelectCommand.CommandTimeout = 1800
+			'If TextBox1.Text <> "" Then
+			'	da1.SelectCommand.Parameters.AddWithValue("@customer", TextBox1.Text)
+			'End If
+			dt1.Clear()
+				ExportButton.Enabled = False
             cn.Open()
             da1.Fill(dt1)
             da1.Dispose()
@@ -181,4 +185,9 @@ Public Class SQLExport
             shtlim = CInt(LimitBox.Text)
         End If
     End Sub
+
+	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+		My.Forms.SelectCustomer.ShowDialog()
+		TextBox1.Text = "'" + My.Forms.Reporting.customerlist.Replace(",", "','") + "'"
+	End Sub
 End Class

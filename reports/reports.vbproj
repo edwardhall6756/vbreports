@@ -153,6 +153,12 @@
     <Compile Include="collect2000DataSet.vb">
       <DependentUpon>collect2000DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customer.Designer.vb">
+      <DependentUpon>customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DateMaintenance.Designer.vb">
       <DependentUpon>DateMaintenance.vb</DependentUpon>
     </Compile>
@@ -309,6 +315,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="SelectCustomer.Designer.vb">
+      <DependentUpon>SelectCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="settlement.Designer.vb">
       <DependentUpon>settlement.vb</DependentUpon>
     </Compile>
@@ -386,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeClientNumber.resx">
       <DependentUpon>ChangeClientNumber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer.resx">
+      <DependentUpon>customer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DateMaintenance.resx">
       <DependentUpon>DateMaintenance.vb</DependentUpon>
@@ -466,6 +481,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCustomer.resx">
+      <DependentUpon>SelectCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="settlement.resx">
       <DependentUpon>settlement.vb</DependentUpon>

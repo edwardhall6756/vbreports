@@ -1,8 +1,8 @@
-﻿Partial Class collect2000DataSet
+﻿Partial Class Collect2000DataSet
 End Class
 
 
 Namespace collect2000DataSetTableAdapters
-    Partial Public Class settlementdataTableAdapter
-    End Class
+	Partial Public Class SettlementdataTableAdapter
+	End Class
 End Namespace
