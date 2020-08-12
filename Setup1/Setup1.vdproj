@@ -15,20 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_25680CB6AAA607F474281B37201B3ECC"
-        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_25680CB6AAA607F474281B37201B3ECC"
+        "MsmKey" = "8:_15941B34C56390826E4DD6853986A499"
         "OwnerKey" = "8:_70C583E8C3614F6089A883C7F9B0A058"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_25680CB6AAA607F474281B37201B3ECC"
+        "MsmKey" = "8:_15941B34C56390826E4DD6853986A499"
         "OwnerKey" = "8:_B3A1C9A6F6E341D8BF500124EF8EECCE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_15941B34C56390826E4DD6853986A499"
+        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,20 +39,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8980C3380E30820355CFDF1BFA0C39EF"
-        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8980C3380E30820355CFDF1BFA0C39EF"
+        "MsmKey" = "8:_9867697EF903FC7A2CFD0E6D4D572BE0"
         "OwnerKey" = "8:_70C583E8C3614F6089A883C7F9B0A058"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8980C3380E30820355CFDF1BFA0C39EF"
+        "MsmKey" = "8:_9867697EF903FC7A2CFD0E6D4D572BE0"
         "OwnerKey" = "8:_B3A1C9A6F6E341D8BF500124EF8EECCE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9867697EF903FC7A2CFD0E6D4D572BE0"
+        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,13 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_25680CB6AAA607F474281B37201B3ECC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_70C583E8C3614F6089A883C7F9B0A058"
+        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,13 +82,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8980C3380E30820355CFDF1BFA0C39EF"
+        "OwnerKey" = "8:_15941B34C56390826E4DD6853986A499"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9CABF42C9FA24F1DA880F3A222278042"
+        "OwnerKey" = "8:_70C583E8C3614F6089A883C7F9B0A058"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9867697EF903FC7A2CFD0E6D4D572BE0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -192,20 +192,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_25680CB6AAA607F474281B37201B3ECC"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_15941B34C56390826E4DD6853986A499"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+            "AssemblyAsmDisplayName" = "8:ExportData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=454d11edf152e8e6, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_25680CB6AAA607F474281B37201B3ECC"
+                    "_15941B34C56390826E4DD6853986A499"
                     {
-                    "Name" = "8:System.Net.Http.dll"
+                    "Name" = "8:ExportData.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Net.Http.dll"
+            "SourcePath" = "8:ExportData.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4264DAEF92A34E9E96B2476EC4C49E4D"
@@ -223,20 +223,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8980C3380E30820355CFDF1BFA0C39EF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9867697EF903FC7A2CFD0E6D4D572BE0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ExportData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_8980C3380E30820355CFDF1BFA0C39EF"
+                    "_9867697EF903FC7A2CFD0E6D4D572BE0"
                     {
-                    "Name" = "8:ExportData.dll"
+                    "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ExportData.dll"
+            "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4264DAEF92A34E9E96B2476EC4C49E4D"
@@ -311,20 +311,20 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Reporting"
         "ProductCode" = "8:{586A6E2E-1120-4F6D-8624-783102CEF5CB}"
-        "PackageCode" = "8:{124E34C3-84B8-4283-9570-0FFCCCE13216}"
+        "PackageCode" = "8:{113E0576-C745-4ED1-9D30-DAFE144BA7B8}"
         "UpgradeCode" = "8:{093FF96C-1722-4BD0-B10F-024C7C170FDC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:FBCS-INC."
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Reporting"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:FBCS-Inc"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -846,7 +846,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_70C583E8C3614F6089A883C7F9B0A058"
             {
-            "SourcePath" = "8:\\\\fbpa1fs1\\it\\Development\\Upgrade\\Tools\\Reporting\\reports\\obj\\Release\\reports.exe"
+            "SourcePath" = "8:..\\reports\\obj\\Release\\reports.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F12225A812EE49EAA002991EA161EA22"
@@ -874,7 +874,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9CABF42C9FA24F1DA880F3A222278042"
             {
-            "SourcePath" = "8:\\\\fbpa1fs1\\it\\Development\\Upgrade\\Tools\\Reporting\\reports\\obj\\Release\\reports.exe"
+            "SourcePath" = "8:..\\reports\\obj\\Release\\reports.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4264DAEF92A34E9E96B2476EC4C49E4D"
@@ -902,7 +902,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B3A1C9A6F6E341D8BF500124EF8EECCE"
             {
-            "SourcePath" = "8:\\\\fbpa1fs1\\it\\Development\\Upgrade\\Tools\\Reporting\\reports\\obj\\Release\\reports.exe"
+            "SourcePath" = "8:..\\reports\\obj\\Release\\reports.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C61F676C93B147A6A702105010860510"
