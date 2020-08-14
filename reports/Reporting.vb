@@ -223,4 +223,8 @@ Public Class Reporting
 	Private Sub ClosedReturnedDatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClosedReturnedDatesToolStripMenuItem.Click
 		OpenChild(My.Forms.DateMaintenance)
 	End Sub
+
+	Private Sub UstoimerNumberChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UstoimerNumberChangeToolStripMenuItem.Click
+		OpenChild(My.Forms.ChangeClientNumber)
+	End Sub
 End Class

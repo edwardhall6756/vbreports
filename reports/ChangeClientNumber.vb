@@ -151,12 +151,25 @@ end
 
 	Private Sub MakeChange_Click(sender As Object, e As EventArgs) Handles MakeChange.Click
 		CheckForIllegalCrossThreadCalls = False
-		ActivityTextBox.Text = "Changing old customer code "
-		WriteTime()
-		StopWatch.Enabled = True
-		QueryThread = New System.Threading.Thread(AddressOf RunQuery
+		Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Critical
+		Dim msg = "You are about to make a mass change to customer numbers. 
+Do you want to continue?"
+		Dim title = "Data Changing Request"
+		Dim response = MsgBox(msg, style, title)
+		If response = MsgBoxResult.Yes Then
+			msg = "This will change the customer numbers. 
+Are you certain this is what you want to do?"
+			response = MsgBox(msg, style, title)
+			If response = MsgBoxResult.Yes Then
+				ActivityTextBox.Text = "Changing old customer code "
+				WriteTime()
+				StopWatch.Enabled = True
+				QueryThread = New System.Threading.Thread(AddressOf RunQuery
 )
-		QueryThread.Start()
+				QueryThread.Start()
+			End If
+		End If
+
 	End Sub
 	Public Sub RunQuery()
 		WriteTime()
@@ -258,4 +271,7 @@ end
 		MakeChange.Enabled = Mkchgenable()
 	End Sub
 
+	Private Sub ChangeClientNumber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 End Class

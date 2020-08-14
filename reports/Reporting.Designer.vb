@@ -61,6 +61,8 @@ Partial Class Reporting
 		Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.SettlementsToBe2ndReviewedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ClosedReturnedDatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AbortToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.LastARCStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -77,8 +79,7 @@ Partial Class Reporting
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-		Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.ClosedReturnedDatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.UstoimerNumberChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -309,6 +310,19 @@ Partial Class Reporting
 		Me.SettlementsToBe2ndReviewedToolStripMenuItem.Size = New System.Drawing.Size(252, 22)
 		Me.SettlementsToBe2ndReviewedToolStripMenuItem.Text = "Settlements to be 2nd Reviewed"
 		'
+		'MaintenanceToolStripMenuItem
+		'
+		Me.MaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClosedReturnedDatesToolStripMenuItem, Me.UstoimerNumberChangeToolStripMenuItem})
+		Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
+		Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(115, 20)
+		Me.MaintenanceToolStripMenuItem.Text = "Data Maintenance"
+		'
+		'ClosedReturnedDatesToolStripMenuItem
+		'
+		Me.ClosedReturnedDatesToolStripMenuItem.Name = "ClosedReturnedDatesToolStripMenuItem"
+		Me.ClosedReturnedDatesToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.ClosedReturnedDatesToolStripMenuItem.Text = "Closed & Returned Dates"
+		'
 		'AbortToolStripMenuItem
 		'
 		Me.AbortToolStripMenuItem.Name = "AbortToolStripMenuItem"
@@ -410,18 +424,11 @@ Partial Class Reporting
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
 		'
-		'MaintenanceToolStripMenuItem
+		'UstoimerNumberChangeToolStripMenuItem
 		'
-		Me.MaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClosedReturnedDatesToolStripMenuItem})
-		Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
-		Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(115, 20)
-		Me.MaintenanceToolStripMenuItem.Text = "Data Maintenance"
-		'
-		'ClosedReturnedDatesToolStripMenuItem
-		'
-		Me.ClosedReturnedDatesToolStripMenuItem.Name = "ClosedReturnedDatesToolStripMenuItem"
-		Me.ClosedReturnedDatesToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
-		Me.ClosedReturnedDatesToolStripMenuItem.Text = "Closed & Returned Dates"
+		Me.UstoimerNumberChangeToolStripMenuItem.Name = "UstoimerNumberChangeToolStripMenuItem"
+		Me.UstoimerNumberChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.UstoimerNumberChangeToolStripMenuItem.Text = "Customer Number Change"
 		'
 		'Reporting
 		'
@@ -500,4 +507,5 @@ Partial Class Reporting
 	Friend WithEvents CustomerToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents ClosedReturnedDatesToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents UstoimerNumberChangeToolStripMenuItem As ToolStripMenuItem
 End Class
