@@ -77,6 +77,8 @@ Partial Class Reporting
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
+		Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ClosedReturnedDatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -99,7 +101,7 @@ Partial Class Reporting
 		'
 		'MenuStrip1
 		'
-		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem, Me.AbortToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.CloseToolStripMenuItem, Me.HelpToolStripMenuItem, Me.ExitToolStripMenuItem1})
+		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem, Me.MaintenanceToolStripMenuItem, Me.AbortToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.CloseToolStripMenuItem, Me.HelpToolStripMenuItem, Me.ExitToolStripMenuItem1})
 		Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
@@ -408,6 +410,19 @@ Partial Class Reporting
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
 		'
+		'MaintenanceToolStripMenuItem
+		'
+		Me.MaintenanceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClosedReturnedDatesToolStripMenuItem})
+		Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
+		Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(115, 20)
+		Me.MaintenanceToolStripMenuItem.Text = "Data Maintenance"
+		'
+		'ClosedReturnedDatesToolStripMenuItem
+		'
+		Me.ClosedReturnedDatesToolStripMenuItem.Name = "ClosedReturnedDatesToolStripMenuItem"
+		Me.ClosedReturnedDatesToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+		Me.ClosedReturnedDatesToolStripMenuItem.Text = "Closed & Returned Dates"
+		'
 		'Reporting
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -483,4 +498,6 @@ Partial Class Reporting
 	Friend WithEvents ChangeCustomerNumberToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents FeeCodeChangeToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents CustomerToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents ClosedReturnedDatesToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -58,6 +58,7 @@ Partial Class DateMaintenance
 		'ClosedDate
 		'
 		Me.ClosedDate.CustomFormat = "yyyy-MM-dd"
+		Me.ClosedDate.Enabled = False
 		Me.ClosedDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.ClosedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
 		Me.ClosedDate.Location = New System.Drawing.Point(447, 80)
@@ -68,6 +69,7 @@ Partial Class DateMaintenance
 		'ReturnedDate
 		'
 		Me.ReturnedDate.CustomFormat = "yyyy-MM-dd"
+		Me.ReturnedDate.Enabled = False
 		Me.ReturnedDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.ReturnedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
 		Me.ReturnedDate.Location = New System.Drawing.Point(447, 124)
@@ -78,6 +80,7 @@ Partial Class DateMaintenance
 		'Label1
 		'
 		Me.Label1.AutoSize = True
+		Me.Label1.Enabled = False
 		Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label1.Location = New System.Drawing.Point(76, 83)
 		Me.Label1.Name = "Label1"
@@ -88,6 +91,7 @@ Partial Class DateMaintenance
 		'Label2
 		'
 		Me.Label2.AutoSize = True
+		Me.Label2.Enabled = False
 		Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label2.Location = New System.Drawing.Point(58, 124)
 		Me.Label2.Name = "Label2"
@@ -107,6 +111,7 @@ Partial Class DateMaintenance
 		'
 		'closedbox
 		'
+		Me.closedbox.Enabled = False
 		Me.closedbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.closedbox.Location = New System.Drawing.Point(179, 80)
 		Me.closedbox.Name = "closedbox"
@@ -115,6 +120,7 @@ Partial Class DateMaintenance
 		'
 		'returnedbox
 		'
+		Me.returnedbox.Enabled = False
 		Me.returnedbox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.returnedbox.Location = New System.Drawing.Point(179, 124)
 		Me.returnedbox.Name = "returnedbox"
@@ -124,6 +130,7 @@ Partial Class DateMaintenance
 		'Label4
 		'
 		Me.Label4.AutoSize = True
+		Me.Label4.Enabled = False
 		Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label4.Location = New System.Drawing.Point(325, 86)
 		Me.Label4.Name = "Label4"
@@ -134,6 +141,7 @@ Partial Class DateMaintenance
 		'Label5
 		'
 		Me.Label5.AutoSize = True
+		Me.Label5.Enabled = False
 		Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label5.Location = New System.Drawing.Point(327, 130)
 		Me.Label5.Name = "Label5"
@@ -143,6 +151,7 @@ Partial Class DateMaintenance
 		'
 		'Button2
 		'
+		Me.Button2.Enabled = False
 		Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Button2.Location = New System.Drawing.Point(673, 80)
 		Me.Button2.Name = "Button2"
@@ -153,6 +162,7 @@ Partial Class DateMaintenance
 		'
 		'Button3
 		'
+		Me.Button3.Enabled = False
 		Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Button3.Location = New System.Drawing.Point(673, 124)
 		Me.Button3.Name = "Button3"
