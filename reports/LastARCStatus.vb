@@ -32,8 +32,8 @@ Public Class LastARCStatus
 
         Try
             Cursor = Cursors.WaitCursor
-            Dim cmd As New SqlCommand(vsql)
-            Dim cn As New SqlConnection With {
+			'Dim cmd As New SqlCommand(vsql)
+			Dim cn As New SqlConnection With {
                 .ConnectionString = My.Settings.collect2000ConnectionString
             }
             Dim da1 As SqlDataAdapter = New SqlDataAdapter(vsql, cn.ConnectionString)

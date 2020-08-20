@@ -40,6 +40,7 @@ Partial Class ChangeClientNumber
 		Me.prod = New System.Windows.Forms.RadioButton()
 		Me.testdb = New System.Windows.Forms.RadioButton()
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+		Me.Label2 = New System.Windows.Forms.Label()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
@@ -202,11 +203,21 @@ Partial Class ChangeClientNumber
 		Me.GroupBox2.TabStop = False
 		Me.GroupBox2.Text = "Database"
 		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.Location = New System.Drawing.Point(284, 338)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(39, 13)
+		Me.Label2.TabIndex = 79
+		Me.Label2.Text = "Label2"
+		'
 		'ChangeClientNumber
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 450)
+		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.ComboBox2)
 		Me.Controls.Add(Me.ComboBox1)
@@ -249,4 +260,5 @@ Partial Class ChangeClientNumber
 	Friend WithEvents prod As RadioButton
 	Friend WithEvents testdb As RadioButton
 	Friend WithEvents GroupBox2 As GroupBox
+	Friend WithEvents Label2 As Label
 End Class

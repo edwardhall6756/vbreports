@@ -227,4 +227,12 @@ Public Class Reporting
 	Private Sub UstoimerNumberChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UstoimerNumberChangeToolStripMenuItem.Click
 		OpenChild(My.Forms.ChangeClientNumber)
 	End Sub
+
+	Private Sub ARCStatusHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ARCStatusHistoryToolStripMenuItem.Click
+		OpenChild(My.Forms.ARCStatusHistory)
+	End Sub
+
+	Private Sub ReturnedDateMassChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnedDateMassChangeToolStripMenuItem.Click
+		OpenChild(My.Forms.MassDateChange)
+	End Sub
 End Class

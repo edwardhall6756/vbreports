@@ -3,7 +3,7 @@
 Public Class DateMaintenance
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 		GetFileData()
-		Disableform()
+
 	End Sub
 	Private Sub GetFileData()
 		Dim dt1 As New DataTable
@@ -11,7 +11,7 @@ Public Class DateMaintenance
 		vsql = "select m.number,m.closed,m.Returned "
 		vsql += "From master m with(nolock) "
 		vsql += "where m.number = '" + filenumber.Text.Trim + "'"
-		vsql += "and master.closed is not null"
+		vsql += "and m.closed is not null"
 		Cursor = Cursors.WaitCursor
 		Dim cmd As New SqlCommand(vsql)
 		Dim cn As New SqlConnection With {
@@ -61,7 +61,7 @@ Public Class DateMaintenance
 
 
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-		If Validatedate(closedbox.Text) Then
+		If Validatedate(ClosedDate.Text) Then
 
 			Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Critical
 			Dim msg = "You are about to change the Closed date for this File Number. 
@@ -85,7 +85,7 @@ Are you certain this is what you want to do?"
 		vsql += "where number = '" + filenumber.Text.Trim + "'"
 		vsql += "insert into notes"
 		vsql += "([number],[created],[user0],[action],[result],[comment])"
-		vsql += "values('" + filenumber.Text.Trim + "',GETDATE(),'dtemnt',.Date','Chng','Closed date changed from '" + closedbox.Text + ", To '" + ClosedDate.Value.ToShortDateString.ToString + "'"
+		vsql += "values('" + filenumber.Text.Trim + "',GETDATE(),'dtemnt','Date','Chng','Closed date changed from " + closedbox.Text + ", To " + ClosedDate.Value.ToShortDateString.ToString + "')"
 		Cursor = Cursors.WaitCursor
 
 		Dim cn As New SqlConnection With {
@@ -104,7 +104,7 @@ Are you certain this is what you want to do?"
 		vsql += "where number = '" + filenumber.Text.Trim + "'"
 		vsql += "insert into notes"
 		vsql += "([number],[created],[user0],[action],[result],[comment])"
-		vsql += "values('" + filenumber.Text.Trim + "',GETDATE(),'dtemnt',.Date','Chng','Returned date changed from '" + returnedbox.Text + ", To '" + ReturnedDate.Value.ToShortDateString.ToString + "'"
+		vsql += "values('" + filenumber.Text.Trim + "',GETDATE(),'dtemnt','Date','Chng','Returned date changed from " + returnedbox.Text + ", To " + ReturnedDate.Value.ToShortDateString.ToString + "')"
 
 		Cursor = Cursors.WaitCursor
 
@@ -120,7 +120,10 @@ Are you certain this is what you want to do?"
 	Private Function Validatedate(dte As String) As Boolean
 
 		If Not IsDate(dte) Then Return False
-		Dim dtest As New Date(dte)
+
+		Dim dtest As DateTime = Convert.ToDateTime(dte)
+
+
 		If dtest > Now Then Return False
 		Return True
 	End Function
@@ -143,4 +146,7 @@ Are you certain this is what you want to do?"
 		End If
 	End Sub
 
+	Private Sub filenumber_TextChanged(sender As Object, e As EventArgs) Handles filenumber.TextChanged
+		Disableform()
+	End Sub
 End Class

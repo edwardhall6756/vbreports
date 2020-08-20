@@ -2,73 +2,43 @@
 Imports System.IO
 Imports Microsoft.Office.Interop
 
-Public Class ChangeClientNumber
+Public Class MassDateChange
+
 	Dim Tmilli As Integer
-	Dim Tsec As Integer
-	Dim Tmin As Integer
-	Dim Thour As Integer
-	Private LoadThread As System.Threading.Thread
-	Private QueryThread As System.Threading.Thread
-	Dim dts As DataSet
-	Dim excel As String
-	Private fn As String
-	Dim dt As DataTable
-	Dim fi As FileInfo
-	Dim count As Integer
-	Dim Tcount As Integer
-	Dim Mcount As Integer
-	Dim Rcount As Integer
-	Dim col As Integer
-	Dim fcol As Integer
-	Dim ocol As Integer
-	Dim lines() As String
-	Private help As String
-	Dim cn As SqlConnection
+		Dim Tsec As Integer
+		Dim Tmin As Integer
+		Dim Thour As Integer
+		Private LoadThread As System.Threading.Thread
+		Private QueryThread As System.Threading.Thread
+		Dim dts As DataSet
+		Dim excel As String
+		Private fn As String
+		Dim dt As DataTable
+		Dim fi As FileInfo
+		Dim count As Integer
+		Dim Tcount As Integer
+		Dim Mcount As Integer
+		Dim Rcount As Integer
+		Dim col As Integer
+		Dim fcol As Integer
+		Dim ocol As Integer
+		Dim lines() As String
+		Private help As String
+		Dim cn As SqlConnection
 	Private vsql = "declare @oldCode as varchar(10)
- set @oldcode=(select m.customer from master m with(nolock) where number=@number)
+ set @oldcode=isnull((select m.returned from master m with(nolock) where number=@number),'')
 
-if @oldcode is not null begin
+INSERT INTO notes
+(number, created, user0, [action], result, comment)
+VALUES(@number, getdate(), 'SYSTEM', 'retnd', 'CHNG', 'Returned Date CHANGED | ' + @oldcode + ' | ' + @newcode)
 
-	INSERT INTO notes
-		(number, created, user0, [action], result, comment)
-		VALUES
-		(@number, getdate(), 'SYSTEM', 'CUST', 'CHNG', 'CUSTOMER CHANGED | ' + @oldcode + ' | ' + @newcode)
-
-	update master
-	set customer = @newcode
-	from master with (rowlock)
-	where number = @number
-
-	update pdc
-	set customer = @newcode
-	from pdc with (rowlock) 
-	where pdc.number = @number
-	
-	update promises
-	set customer = @newcode
-	from promises with (rowlock) 
-	where promises.acctid = @number
-	
-	update payhistory 
-	set payhistory.customer = @newcode
-	from payhistory with (rowlock) 
-	where payhistory.number = @number
-
-end
+update master
+set returned = @newcode
+from master with (rowlock)
+where number = @number
 "
 	Private Sub Stopwatch_Tick(sender As Object, e As EventArgs) Handles StopWatch.Tick
-		Tmilli += 1
-		If Tmilli = 100 Then
-			Tsec += 1
-			Tmilli = 0
-		ElseIf Tsec = 60 Then
-			Tmin += 1
-			Tsec = 0
-		ElseIf Tmin = 60 Then
-			Thour += 1
-			Tmin = 0
-		End If
-		WriteTime()
+
 	End Sub
 	Private Sub WriteTime()
 		ElapseTextBox.Text = "Elapsed Time " + Strings.Right("0" + Thour.ToString, 2) + " : " + Strings.Right("0" + Tmin.ToString, 2) + " : " + Strings.Right("0" + Tsec.ToString, 2)
@@ -98,7 +68,7 @@ end
 	End Sub
 	Private Sub ReadFile(ByVal fn As String)
 		WriteTime()
-		StopWatch.Enabled = True
+		Stopwatch.Enabled = True
 		ActivityTextBox.Text = " Loading Excel file"
 		Dim lines() As String = IO.File.ReadAllLines(fn)
 
@@ -124,8 +94,8 @@ end
 		ACount.Text = Tcount
 		'FileColumn.Maximum = col
 		'OldColumn.Maximum = col
-		StopWatch.Stop()
-		StopWatch.Enabled = False
+		Stopwatch.Stop()
+		Stopwatch.Enabled = False
 		WriteTime()
 		Tmilli = 0
 		Tsec = 0
@@ -164,7 +134,7 @@ Are you certain this is what you want to do?"
 			If response = MsgBoxResult.Yes Then
 				ActivityTextBox.Text = "Changing old customer code "
 				WriteTime()
-				StopWatch.Enabled = True
+				Stopwatch.Enabled = True
 				QueryThread = New System.Threading.Thread(AddressOf RunQuery
 )
 				QueryThread.Start()
@@ -174,7 +144,7 @@ Are you certain this is what you want to do?"
 	End Sub
 	Public Sub RunQuery()
 		WriteTime()
-		StopWatch.Enabled = True
+		Stopwatch.Enabled = True
 
 		Try
 			Cursor = Cursors.WaitCursor
@@ -200,8 +170,8 @@ Are you certain this is what you want to do?"
 				row.Selected = False
 			Next
 			cn.Close()
-			StopWatch.Stop()
-			StopWatch.Enabled = False
+			Stopwatch.Stop()
+			Stopwatch.Enabled = False
 			WriteTime()
 			Tmilli = 0
 			Tsec = 0
@@ -225,7 +195,7 @@ Are you certain this is what you want to do?"
 			Return False
 		ElseIf DataGridView1.Rows.Count = 0 Then
 			Return False
-		ElseIf prod.Checked = testdb.checked Then
+		ElseIf prod.Checked = testdb.Checked Then
 			Return False
 		Else
 			Return True
@@ -273,10 +243,11 @@ Are you certain this is what you want to do?"
 	End Sub
 
 	Private Sub ChangeClientNumber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		help = "Load a spreadsheet with filenumbers old customer and new customers seperared in columns."
-		help += Chr(13)
-		help += "once the spread sheet loads select the column with file numbers in the File # Column list"
-		help += Chr(13)
-		help += "select the column with new numbers in the new code list"
+		Help = "Load a spreadsheet with filenumbers old customer and new customers seperared in columns."
+		Help += Chr(13)
+		Help += "once the spread sheet loads select the column with file numbers in the File # Column list"
+		Help += Chr(13)
+		Help += "select the column with new numbers in the new code list"
 	End Sub
+
 End Class
