@@ -235,4 +235,8 @@ Public Class Reporting
 	Private Sub ReturnedDateMassChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnedDateMassChangeToolStripMenuItem.Click
 		OpenChild(My.Forms.MassDateChange)
 	End Sub
+
+	Private Sub AccountStatusCheckToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccountStatusCheckToolStripMenuItem.Click
+		OpenChild(My.Forms.AccountStatuschk)
+	End Sub
 End Class

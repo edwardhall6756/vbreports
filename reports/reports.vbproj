@@ -109,6 +109,12 @@
     <Compile Include="AccountQuery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AccountStatuschk.Designer.vb">
+      <DependentUpon>AccountStatuschk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AccountStatuschk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AFFfix.Designer.vb">
       <DependentUpon>AFFfix.vb</DependentUpon>
     </Compile>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountQuery.resx">
       <DependentUpon>AccountQuery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountStatuschk.resx">
+      <DependentUpon>AccountStatuschk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AFFfix.resx">
       <DependentUpon>AFFfix.vb</DependentUpon>
