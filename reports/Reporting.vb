@@ -6,6 +6,7 @@ Public Class Reporting
         IsMdiContainer = True
 		If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
 		If Environment.UserName = "mary.albert" Then ToolsToolStripMenuItem.Visible = True
+		Me.Text = "Reporting Tool --- Version(" + Application.ProductVersion + ")"
 	End Sub
 	Private Sub PPACreditAuditToolStripMenuItem1_Click(sender As Object, e As EventArgs)
 
