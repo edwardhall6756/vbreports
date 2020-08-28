@@ -17,10 +17,13 @@ Public Class AccountStatuschk
 		vsql += "from master m(nolock) "
 		vsql += "inner join notes n(nolock)on n.number=m.number "
 		vsql += "inner join miscextra me(nolock)on me.number=m.number and title='LastARCStatus' "
+		vsql += "inner join fact(nolock)on fact.customerid=m.customer "
+		vsql += "inner join customcustgroups ccg(nolock)on ccg.id=fact.CustomGroupID "
 		vsql += "where m.account=@acct "
-		vsql += "and n.created between @start and @end "
+		vsql += "and ccg.Name like 'FIN/Absolute Resolutions' "
+		vsql += "And n.created between @start And @End "
 		If statusnotesbtn.Checked Then
-			vsql += "and n.result in('RD','MG','D','AD','CV','CW')"
+			vsql += "And n.result In('RD','MG','D','AD','CV','CW')"
 		End If
 		vsql += "order by n.created desc"
 
