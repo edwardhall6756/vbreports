@@ -26,11 +26,12 @@ Public Class ARCStatusHistory
 			}
 			da1 = New SqlDataAdapter(vsql, cn.ConnectionString)
 			da1.SelectCommand.CommandTimeout = 1800
-			da1.SelectCommand.Parameters.AddWithValue("@acct", acct)
+			da1.SelectCommand.Parameters.AddWithValue("@acct", TextBox1.Text)
 
 			dtbl.Clear()
 			cn.Open()
 			da1.Fill(dtbl)
+			If dtbl.Rows.Count < 1 Then MessageBox.Show("No History returned for this account")
 			da1.Dispose()
 			cn.Close()
 

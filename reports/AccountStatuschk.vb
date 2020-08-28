@@ -5,6 +5,7 @@ Public Class AccountStatuschk
 	Private dtbl As New DataTable
 	Private acct As String = ""
 	Dim da1 As SqlDataAdapter
+	Dim usql As String
 
 	Private Sub Lookupbtn_Click(sender As Object, e As EventArgs) Handles Lookupbtn.Click
 		StatCalc.Text = ""
@@ -106,6 +107,44 @@ Public Class AccountStatuschk
 	Private Sub enddate_ValueChanged(sender As Object, e As EventArgs) Handles enddate.ValueChanged
 		StatCalc.Text = ""
 		dtbl.Clear()
+
+	End Sub
+
+	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+		CheckForIllegalCrossThreadCalls = False
+
+		UpdtData(dtbl)
+	End Sub
+	Public Sub UpdtData(ByRef dtbl As DataTable)
+		usql = "update MiscExtra "
+		usql += " set thedata=@newdata "
+		usql += " where Number=@filenum "
+		usql += " and Title='LastARCStatus' and TheData = @olddata "
+		Try
+			Cursor = Cursors.WaitCursor
+			Dim cmd As New SqlCommand(usql)
+			Dim cn As New SqlConnection With {
+				.ConnectionString = My.Settings.collect2000ConnectionString
+			}
+			Dim da1 As SqlCommand = New SqlCommand(usql, cn) With {
+				.CommandTimeout = 1800
+			}
+
+			da1.Parameters.AddWithValue("@filenum", DataGridView1.CurrentRow.Cells(0).Value)
+			da1.Parameters.AddWithValue("@olddata", DataGridView1.CurrentRow.Cells(2).Value)
+			da1.Parameters.AddWithValue("@newdata", StatCalc.Text)
+			cn.Open()
+			da1.ExecuteNonQuery()
+			da1.Dispose()
+			StatCalc.Text = ""
+			dtbl.Clear()
+			Lookup()
+
+		Catch ex As Exception
+			Cursor = Cursors.Default
+			MessageBox.Show(ex.Message)
+		End Try
+		Cursor = Cursors.Default
 
 	End Sub
 End Class

@@ -66,36 +66,45 @@ Public Class ReportData
         QueryThread.Start()
     End Sub
 
-    Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
-        CheckForIllegalCrossThreadCalls = False
+	Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+		CheckForIllegalCrossThreadCalls = False
 
-        ActivityTextBox.Text = "Exporting " + Format(RptDataGridView.RowCount, "###,###,###,##0") + " Rows."
-        WriteTime()
-        StopWatch.Enabled = True
-        ExportThread = New System.Threading.Thread(AddressOf Export)
-        ExportThread.Start()
-    End Sub
-    Private Sub Export()
+		ActivityTextBox.Text = "Exporting " + Format(RptDataGridView.RowCount, "###,###,###,##0") + " Rows."
+		WriteTime()
+		StopWatch.Enabled = True
+		ExportThread = New System.Threading.Thread(AddressOf Export)
+		ExportThread.Start()
+	End Sub
+	Private Sub Exportsetup()
+		ex = New ExportData With {
+				.FirstRow = 2,
+				.Visable = False,
+				.ExcelFile = FileTextBox.Text,
+				.SheetFormating = shfmt,
+				.ActiveSheet = 1
+				 }
+	End Sub
+	Private Sub Export()
         Try
             Cursor = Cursors.WaitCursor
             WriteTime()
             StopWatch.Enabled = True
 
-            If ex Is Nothing Then
-                ex = New ExportData With {
-                .FirstRow = 2,
-                .Visable = False,
-                .ExcelFile = FileTextBox.Text,
-                .SheetFormating = shfmt,
-                .ActiveSheet = 1
-                 }
-            Else
-                ex.ActiveSheet = 1
-                ex.SheetFormating = shfmt
-            End If
+			If ex Is Nothing Then Exportsetup()
+			'ex = New ExportData With {
+			'             .FirstRow = 2,
+			'             .Visable = False,
+			'             .ExcelFile = FileTextBox.Text,
+			'             .SheetFormating = shfmt,
+			'             .ActiveSheet = 1
+			'              }
+			'Else
+			'    ex.ActiveSheet = 1
+			'    ex.SheetFormating = shfmt
+			'End If
 
 
-            ActivityTextBox.Text = "Writing " + Format(dt1.Rows.Count, "###,###,###,##0") + " Rows to the report."
+			ActivityTextBox.Text = "Writing " + Format(dt1.Rows.Count, "###,###,###,##0") + " Rows to the report."
             ex.Data = dt1
             ex.Export()
             Cursor = Cursors.Default
@@ -170,12 +179,13 @@ UserAborted: da1.Dispose()
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         ext = ".csv"
         FileTextBox.Text = Path.ChangeExtension(FileTextBox.Text, ext)
-
-    End Sub
+		Exportsetup()
+	End Sub
 
 	Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
 		ext = ".xlsx"
 		FileTextBox.Text = Path.ChangeExtension(FileTextBox.Text, ext)
+		Exportsetup()
 	End Sub
 	Public Sub StopQuery()
 		QueryThread.Abort()
@@ -199,5 +209,9 @@ UserAborted: da1.Dispose()
 		Tsec = 0
 		Tmin = 0
 		Thour = 0
+	End Sub
+
+	Private Sub FileTextBox_TextChanged(sender As Object, e As EventArgs) Handles FileTextBox.TextChanged
+		Exportsetup()
 	End Sub
 End Class

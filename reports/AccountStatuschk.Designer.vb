@@ -34,6 +34,7 @@ Partial Class AccountStatuschk
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.allnotesbtn = New System.Windows.Forms.RadioButton()
 		Me.statusnotesbtn = New System.Windows.Forms.RadioButton()
+		Me.Button1 = New System.Windows.Forms.Button()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -152,11 +153,21 @@ Partial Class AccountStatuschk
 		Me.statusnotesbtn.Text = "Status Notes"
 		Me.statusnotesbtn.UseVisualStyleBackColor = True
 		'
+		'Button1
+		'
+		Me.Button1.Location = New System.Drawing.Point(300, 139)
+		Me.Button1.Name = "Button1"
+		Me.Button1.Size = New System.Drawing.Size(130, 23)
+		Me.Button1.TabIndex = 73
+		Me.Button1.Text = "Set This Status"
+		Me.Button1.UseVisualStyleBackColor = True
+		'
 		'AccountStatuschk
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 450)
+		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.statusnotesbtn)
 		Me.Controls.Add(Me.allnotesbtn)
 		Me.Controls.Add(Me.Label2)
@@ -191,4 +202,5 @@ Partial Class AccountStatuschk
 	Friend WithEvents Label2 As Label
 	Friend WithEvents allnotesbtn As RadioButton
 	Friend WithEvents statusnotesbtn As RadioButton
+	Friend WithEvents Button1 As Button
 End Class

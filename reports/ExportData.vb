@@ -225,10 +225,10 @@ Public Class ExportData
             For Each dr As DataRow In dt.Rows
                 'Write CSV file
                 For x = 0 To dt.Columns.Count - 1
-                    If IsDBNull(dr(x - 1)) Then
-                        sw.Write("")
-                    Else
-                        sw.Write(NoComma(dr(x)))
+					If IsDBNull(dr(x)) Then
+						sw.Write("")
+					Else
+						sw.Write(NoComma(dr(x)))
                     End If
 
                     If x < dt.Columns.Count - 1 Then
