@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MassDateChange
+Partial Class ChangeReturnDate
 	Inherits System.Windows.Forms.Form
 
 	'Form overrides dispose to clean up the component list.
@@ -41,6 +41,7 @@ Partial Class MassDateChange
 		Me.Button1 = New System.Windows.Forms.Button()
 		Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
 		Me.StopWatch = New System.Windows.Forms.Timer(Me.components)
+		Me.Button2 = New System.Windows.Forms.Button()
 		Me.GroupBox2.SuspendLayout()
 		Me.GroupBox1.SuspendLayout()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,17 +50,17 @@ Partial Class MassDateChange
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(284, 339)
+		Me.Label2.Location = New System.Drawing.Point(296, 359)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(39, 13)
+		Me.Label2.Size = New System.Drawing.Size(105, 13)
 		Me.Label2.TabIndex = 91
-		Me.Label2.Text = "Label2"
+		Me.Label2.Text = "Change Return Date"
 		'
 		'GroupBox2
 		'
 		Me.GroupBox2.Controls.Add(Me.prod)
 		Me.GroupBox2.Controls.Add(Me.testdb)
-		Me.GroupBox2.Location = New System.Drawing.Point(264, 239)
+		Me.GroupBox2.Location = New System.Drawing.Point(264, 253)
 		Me.GroupBox2.Name = "GroupBox2"
 		Me.GroupBox2.Size = New System.Drawing.Size(156, 78)
 		Me.GroupBox2.TabIndex = 90
@@ -107,11 +108,11 @@ Partial Class MassDateChange
 		'Label4
 		'
 		Me.Label4.AutoSize = True
-		Me.Label4.Location = New System.Drawing.Point(24, 317)
+		Me.Label4.Location = New System.Drawing.Point(12, 318)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(79, 13)
+		Me.Label4.Size = New System.Drawing.Size(93, 13)
 		Me.Label4.TabIndex = 87
-		Me.Label4.Text = "Customer Code"
+		Me.Label4.Text = "New Date Column"
 		'
 		'Label3
 		'
@@ -127,7 +128,7 @@ Partial Class MassDateChange
 		Me.GroupBox1.Controls.Add(Me.ActivityTextBox)
 		Me.GroupBox1.Controls.Add(Me.ElapseTextBox)
 		Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.GroupBox1.Location = New System.Drawing.Point(426, 239)
+		Me.GroupBox1.Location = New System.Drawing.Point(426, 251)
 		Me.GroupBox1.Name = "GroupBox1"
 		Me.GroupBox1.Size = New System.Drawing.Size(351, 87)
 		Me.GroupBox1.TabIndex = 85
@@ -160,7 +161,7 @@ Partial Class MassDateChange
 		'
 		Me.MakeChange.AutoEllipsis = True
 		Me.MakeChange.Enabled = False
-		Me.MakeChange.Location = New System.Drawing.Point(111, 386)
+		Me.MakeChange.Location = New System.Drawing.Point(111, 359)
 		Me.MakeChange.Name = "MakeChange"
 		Me.MakeChange.Size = New System.Drawing.Size(108, 23)
 		Me.MakeChange.TabIndex = 84
@@ -212,11 +213,21 @@ Partial Class MassDateChange
 		'
 		Me.StopWatch.Interval = 1
 		'
-		'MassDateChange
+		'Button2
+		'
+		Me.Button2.Location = New System.Drawing.Point(120, 42)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 92
+		Me.Button2.Text = "How To"
+		Me.Button2.UseVisualStyleBackColor = True
+		'
+		'ChangeReturnDate
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 450)
+		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.ComboBox2)
@@ -229,7 +240,8 @@ Partial Class MassDateChange
 		Me.Controls.Add(Me.ACount)
 		Me.Controls.Add(Me.DataGridView1)
 		Me.Controls.Add(Me.Button1)
-		Me.Name = "MassDateChange"
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+		Me.Name = "ChangeReturnDate"
 		Me.Text = "MassDateChange"
 		Me.GroupBox2.ResumeLayout(False)
 		Me.GroupBox2.PerformLayout()
@@ -259,4 +271,5 @@ Partial Class MassDateChange
 	Friend WithEvents Button1 As Button
 	Friend WithEvents OpenFileDialog1 As OpenFileDialog
 	Friend WithEvents StopWatch As Timer
+	Friend WithEvents Button2 As Button
 End Class

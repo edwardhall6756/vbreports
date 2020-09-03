@@ -2,40 +2,48 @@
 Imports System.IO
 Imports Microsoft.Office.Interop
 
-Public Class MassDateChange
+Public Class Emailupdate
+	Private Sub Emailupdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 
 	Dim Tmilli As Integer
-		Dim Tsec As Integer
-		Dim Tmin As Integer
-		Dim Thour As Integer
-		Private LoadThread As System.Threading.Thread
-		Private QueryThread As System.Threading.Thread
-		Dim dts As DataSet
-		Dim excel As String
-		Private fn As String
-		Dim dt As DataTable
-		Dim fi As FileInfo
-		Dim count As Integer
-		Dim Tcount As Integer
-		Dim Mcount As Integer
-		Dim Rcount As Integer
-		Dim col As Integer
-		Dim fcol As Integer
-		Dim ocol As Integer
-		Dim lines() As String
-		Private help As String
-		Dim cn As SqlConnection
-	Private vsql = "declare @oldCode as varchar(10)
- set @oldcode=isnull((select m.returned from master m with(nolock) where number=@number),'')
-
+	Dim Tsec As Integer
+	Dim Tmin As Integer
+	Dim Thour As Integer
+	Private LoadThread As System.Threading.Thread
+	Private QueryThread As System.Threading.Thread
+	Dim dts As DataSet
+	Dim excel As String
+	Private fn As String
+	Dim dt As DataTable
+	Dim fi As FileInfo
+	Dim count As Integer
+	Dim Tcount As Integer
+	Dim Mcount As Integer
+	Dim Rcount As Integer
+	Dim col As Integer
+	Dim fcol As Integer
+	Dim ocol As Integer
+	Dim lines() As String
+	Private help As String
+	Dim cn As SqlConnection
+	Private vsql = "declare @number varchar(9)
+declare @oldCode as varchar(50)
+set @number = isnull((select number from master(nolock) where closed is null and id2=@acct and master.customer='0003259'),'')
+ set @oldcode=isnull((select email from Debtors with(nolock) where number= @number and seq='0'),'')
+ if @newcode <>'' begin
+if @number <> '' begin
 INSERT INTO notes
 (number, created, user0, [action], result, comment)
-VALUES(@number, getdate(), 'SYSTEM', 'retnd', 'CHNG', 'Returned Date CHANGED | ' + @oldcode + ' | ' + @newcode)
+VALUES(@number, getdate(), 'SYSTEM', 'email', 'CHNG', 'Email address CHANGED | ' + @oldcode + ' | ' + @newcode)
 
-update master
-set returned = @newcode
-from master with (rowlock)
-where number = @number
+update Debtors
+set email=@newcode
+where number=@number
+and seq='0'
+end
+end
 "
 	Private Sub Stopwatch_Tick(sender As Object, e As EventArgs) Handles StopWatch.Tick
 
@@ -68,7 +76,7 @@ where number = @number
 	End Sub
 	Private Sub ReadFile(ByVal fn As String)
 		WriteTime()
-		Stopwatch.Enabled = True
+		StopWatch.Enabled = True
 		ActivityTextBox.Text = " Loading Excel file"
 		Dim lines() As String = IO.File.ReadAllLines(fn)
 
@@ -94,8 +102,8 @@ where number = @number
 		ACount.Text = Tcount
 		'FileColumn.Maximum = col
 		'OldColumn.Maximum = col
-		Stopwatch.Stop()
-		Stopwatch.Enabled = False
+		StopWatch.Stop()
+		StopWatch.Enabled = False
 		WriteTime()
 		Tmilli = 0
 		Tsec = 0
@@ -123,18 +131,18 @@ where number = @number
 	Private Sub MakeChange_Click(sender As Object, e As EventArgs) Handles MakeChange.Click
 		CheckForIllegalCrossThreadCalls = False
 		Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Critical
-		Dim msg = "You are about to make a mass change to customer numbers. 
+		Dim msg = "You are about to make a mass change to email address. 
 Do you want to continue?"
 		Dim title = "Data Changing Request"
 		Dim response = MsgBox(msg, style, title)
 		If response = MsgBoxResult.Yes Then
-			msg = "This will change the customer numbers. 
+			msg = "This will change the email address. 
 Are you certain this is what you want to do?"
 			response = MsgBox(msg, style, title)
 			If response = MsgBoxResult.Yes Then
 				ActivityTextBox.Text = "Changing old customer code "
 				WriteTime()
-				Stopwatch.Enabled = True
+				StopWatch.Enabled = True
 				QueryThread = New System.Threading.Thread(AddressOf RunQuery
 )
 				QueryThread.Start()
@@ -144,7 +152,7 @@ Are you certain this is what you want to do?"
 	End Sub
 	Public Sub RunQuery()
 		WriteTime()
-		Stopwatch.Enabled = True
+		StopWatch.Enabled = True
 
 		Try
 			Cursor = Cursors.WaitCursor
@@ -152,8 +160,8 @@ Are you certain this is what you want to do?"
 
 			cn.Open()
 			Dim cm1 As SqlCommand = New SqlCommand(vsql, cn)
-			cm1.Parameters.AddWithValue("@number", "000000000")
-			cm1.Parameters.AddWithValue("@newcode", "000000000")
+			cm1.Parameters.AddWithValue("@acct", "000000000")
+			cm1.Parameters.AddWithValue("@newcode", "")
 			'	cm1.Parameters.AddWithValue("@newcode", TextBox1.Text)
 			count = 0
 			For Each row As DataGridViewRow In DataGridView1.Rows
@@ -161,7 +169,7 @@ Are you certain this is what you want to do?"
 				DataGridView1.FirstDisplayedScrollingRowIndex = row.Index
 				Dim obj(row.Cells.Count - 1) As Object
 
-				cm1.Parameters("@number").Value = row.Cells(fcol).Value
+				cm1.Parameters("@acct").Value = row.Cells(fcol).Value
 				cm1.Parameters("@newcode").Value = row.Cells(ocol).Value
 				Rcount = cm1.ExecuteNonQuery()
 				If Rcount > 0 Then count += 1
@@ -170,19 +178,19 @@ Are you certain this is what you want to do?"
 				row.Selected = False
 			Next
 			cn.Close()
-			Stopwatch.Stop()
-			Stopwatch.Enabled = False
+			StopWatch.Stop()
+			StopWatch.Enabled = False
 			WriteTime()
 			Tmilli = 0
 			Tsec = 0
 			Tmin = 0
 			Thour = 0
-			ActivityTextBox.Text = "Changed " + count.ToString + " customer numbers."
+			ActivityTextBox.Text = "Changed " + count.ToString + " email address."
 
 		Catch ex As System.Exception
 			Cursor = Cursors.Default
 			MessageBox.Show(ex.Message)
-			ActivityTextBox.Text = "Error in Changing customer numbers."
+			ActivityTextBox.Text = "Error in Changing email address."
 		End Try
 		Cursor = Cursors.Default
 		Mcount = Tcount - count
@@ -243,11 +251,11 @@ Are you certain this is what you want to do?"
 	End Sub
 
 	Private Sub ChangeClientNumber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Help = "Load a spreadsheet with filenumbers old customer and new customers seperared in columns."
-		Help += Chr(13)
-		Help += "once the spread sheet loads select the column with file numbers in the File # Column list"
-		Help += Chr(13)
-		Help += "select the column with new numbers in the new code list"
+		help = "Load a spreadsheet with filenumbers email addressesseperared in columns."
+		help += Chr(13)
+		help += "once the spread sheet loads select the column with file numbers in the File # Column list"
+		help += Chr(13)
+		help += "select the column with new email in the new code list"
 	End Sub
 
 End Class

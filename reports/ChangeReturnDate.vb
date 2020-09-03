@@ -2,7 +2,8 @@
 Imports System.IO
 Imports Microsoft.Office.Interop
 
-Public Class ChangeClientNumber
+Public Class ChangeReturnDate
+
 	Dim Tmilli As Integer
 	Dim Tsec As Integer
 	Dim Tmin As Integer
@@ -25,50 +26,19 @@ Public Class ChangeClientNumber
 	Private help As String
 	Dim cn As SqlConnection
 	Private vsql = "declare @oldCode as varchar(10)
- set @oldcode=(select m.customer from master m with(nolock) where number=@number)
+ set @oldcode=isnull((select m.returned from master m with(nolock) where number=@number),'')
 
-if @oldcode is not null begin
+INSERT INTO notes
+(number, created, user0, [action], result, comment)
+VALUES(@number, getdate(), 'SYSTEM', 'RETND', 'CHNG', 'Returned Date CHANGED | ' + @oldcode + ' | ' + @newcode)
 
-	INSERT INTO notes
-		(number, created, user0, [action], result, comment)
-		VALUES
-		(@number, getdate(), 'SYSTEM', 'CUST', 'CHNG', 'CUSTOMER CHANGED | ' + @oldcode + ' | ' + @newcode)
-
-	update master
-	set customer = @newcode
-	from master with (rowlock)
-	where number = @number
-
-	update pdc
-	set customer = @newcode
-	from pdc with (rowlock) 
-	where pdc.number = @number
-	
-	update promises
-	set customer = @newcode
-	from promises with (rowlock) 
-	where promises.acctid = @number
-	
-	update payhistory 
-	set payhistory.customer = @newcode
-	from payhistory with (rowlock) 
-	where payhistory.number = @number
-
-end
+update master
+set returned = @newcode
+from master with (rowlock)
+where number = @number
 "
 	Private Sub Stopwatch_Tick(sender As Object, e As EventArgs) Handles StopWatch.Tick
-		Tmilli += 1
-		If Tmilli = 100 Then
-			Tsec += 1
-			Tmilli = 0
-		ElseIf Tsec = 60 Then
-			Tmin += 1
-			Tsec = 0
-		ElseIf Tmin = 60 Then
-			Thour += 1
-			Tmin = 0
-		End If
-		WriteTime()
+
 	End Sub
 	Private Sub WriteTime()
 		ElapseTextBox.Text = "Elapsed Time " + Strings.Right("0" + Thour.ToString, 2) + " : " + Strings.Right("0" + Tmin.ToString, 2) + " : " + Strings.Right("0" + Tsec.ToString, 2)
@@ -153,12 +123,12 @@ end
 	Private Sub MakeChange_Click(sender As Object, e As EventArgs) Handles MakeChange.Click
 		CheckForIllegalCrossThreadCalls = False
 		Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Critical
-		Dim msg = "You are about to make a mass change to client numbers. 
+		Dim msg = "You are about to make a mass change to Returned Dates. 
 Do you want to continue?"
 		Dim title = "Data Changing Request"
 		Dim response = MsgBox(msg, style, title)
 		If response = MsgBoxResult.Yes Then
-			msg = "This will change the Client numbers of these accounts. 
+			msg = "This will change the Returned dates of these accounts. 
 Are you certain this is what you want to do?"
 			response = MsgBox(msg, style, title)
 			If response = MsgBoxResult.Yes Then
@@ -207,12 +177,12 @@ Are you certain this is what you want to do?"
 			Tsec = 0
 			Tmin = 0
 			Thour = 0
-			ActivityTextBox.Text = "Changed " + count.ToString + " email address."
+			ActivityTextBox.Text = "Changed " + count.ToString + " customer numbers."
 
 		Catch ex As System.Exception
 			Cursor = Cursors.Default
 			MessageBox.Show(ex.Message)
-			ActivityTextBox.Text = "Error in Changing email address."
+			ActivityTextBox.Text = "Error in Changing customer numbers."
 		End Try
 		Cursor = Cursors.Default
 		Mcount = Tcount - count
@@ -225,7 +195,7 @@ Are you certain this is what you want to do?"
 			Return False
 		ElseIf DataGridView1.Rows.Count = 0 Then
 			Return False
-		ElseIf prod.Checked = testdb.checked Then
+		ElseIf prod.Checked = testdb.Checked Then
 			Return False
 		Else
 			Return True
@@ -273,13 +243,13 @@ Are you certain this is what you want to do?"
 	End Sub
 
 	Private Sub ChangeClientNumber_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		help = "1.) Build a spreadsheet with file # and the new customer numbers to change them to."
+		help = "1.) Build a spreadsheet with the file # and the returned dates you want for each file # in columns."
 		help += Chr(13)
-		help += "2.) Load the spreadsheet with filenumbers and new customers seperared in columns."
+		help += "2.) Load the spreadsheet with file #s and new returned date seperared in columns."
 		help += Chr(13)
 		help += "3.) Once the spread sheet loads select the column with file numbers in the File # Column list"
 		help += Chr(13)
-		help += "4.) Select the column with new numbers in the new code list"
+		help += "4.) Select the column with new returned dates in the New Date Column list"
 		help += Chr(13)
 		help += "5.) Select Production or Test database you want to make the changes too."
 		help += Chr(13)

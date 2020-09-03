@@ -146,7 +146,7 @@ Are you certain this is what you want to do?"
 		End If
 	End Sub
 
-	Private Sub filenumber_TextChanged(sender As Object, e As EventArgs) Handles filenumber.TextChanged
+	Private Sub Filenumber_TextChanged(sender As Object, e As EventArgs) Handles filenumber.TextChanged
 		Disableform()
 	End Sub
 End Class

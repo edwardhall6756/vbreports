@@ -183,6 +183,12 @@
     <Compile Include="DebtSettlement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="emailupdate.Designer.vb">
+      <DependentUpon>emailupdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="emailupdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ExeterBankruptcyCloses.Designer.vb">
       <DependentUpon>ExeterBankruptcyCloses.vb</DependentUpon>
     </Compile>
@@ -262,10 +268,10 @@
     <Compile Include="LastARCStatus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MassDateChange.Designer.vb">
-      <DependentUpon>MassDateChange.vb</DependentUpon>
+    <Compile Include="ChangeReturnDate.Designer.vb">
+      <DependentUpon>ChangeReturnDate.vb</DependentUpon>
     </Compile>
-    <Compile Include="MassDateChange.vb">
+    <Compile Include="ChangeReturnDate.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewAgent.Designer.vb">
@@ -432,6 +438,9 @@
     <EmbeddedResource Include="DebtSettlement.resx">
       <DependentUpon>DebtSettlement.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="emailupdate.resx">
+      <DependentUpon>emailupdate.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExeterBankruptcyCloses.resx">
       <DependentUpon>ExeterBankruptcyCloses.vb</DependentUpon>
     </EmbeddedResource>
@@ -471,8 +480,8 @@
     <EmbeddedResource Include="LastARCStatus.resx">
       <DependentUpon>LastARCStatus.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MassDateChange.resx">
-      <DependentUpon>MassDateChange.vb</DependentUpon>
+    <EmbeddedResource Include="ChangeReturnDate.resx">
+      <DependentUpon>ChangeReturnDate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewAgent.resx">
       <DependentUpon>NewAgent.vb</DependentUpon>

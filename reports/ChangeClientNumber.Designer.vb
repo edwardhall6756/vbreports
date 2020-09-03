@@ -41,6 +41,7 @@ Partial Class ChangeClientNumber
 		Me.testdb = New System.Windows.Forms.RadioButton()
 		Me.GroupBox2 = New System.Windows.Forms.GroupBox()
 		Me.Label2 = New System.Windows.Forms.Label()
+		Me.Button2 = New System.Windows.Forms.Button()
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
@@ -91,7 +92,7 @@ Partial Class ChangeClientNumber
 		'
 		Me.MakeChange.AutoEllipsis = True
 		Me.MakeChange.Enabled = False
-		Me.MakeChange.Location = New System.Drawing.Point(111, 385)
+		Me.MakeChange.Location = New System.Drawing.Point(108, 349)
 		Me.MakeChange.Name = "MakeChange"
 		Me.MakeChange.Size = New System.Drawing.Size(108, 23)
 		Me.MakeChange.TabIndex = 6
@@ -103,7 +104,7 @@ Partial Class ChangeClientNumber
 		Me.GroupBox1.Controls.Add(Me.ActivityTextBox)
 		Me.GroupBox1.Controls.Add(Me.ElapseTextBox)
 		Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.GroupBox1.Location = New System.Drawing.Point(426, 238)
+		Me.GroupBox1.Location = New System.Drawing.Point(426, 254)
 		Me.GroupBox1.Name = "GroupBox1"
 		Me.GroupBox1.Size = New System.Drawing.Size(351, 87)
 		Me.GroupBox1.TabIndex = 67
@@ -196,7 +197,7 @@ Partial Class ChangeClientNumber
 		'
 		Me.GroupBox2.Controls.Add(Me.prod)
 		Me.GroupBox2.Controls.Add(Me.testdb)
-		Me.GroupBox2.Location = New System.Drawing.Point(264, 238)
+		Me.GroupBox2.Location = New System.Drawing.Point(264, 254)
 		Me.GroupBox2.Name = "GroupBox2"
 		Me.GroupBox2.Size = New System.Drawing.Size(156, 78)
 		Me.GroupBox2.TabIndex = 78
@@ -206,17 +207,27 @@ Partial Class ChangeClientNumber
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(284, 338)
+		Me.Label2.Location = New System.Drawing.Point(287, 359)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(39, 13)
+		Me.Label2.Size = New System.Drawing.Size(133, 13)
 		Me.Label2.TabIndex = 79
-		Me.Label2.Text = "Label2"
+		Me.Label2.Text = "Change customer numbers"
+		'
+		'Button2
+		'
+		Me.Button2.Location = New System.Drawing.Point(141, 41)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 80
+		Me.Button2.Text = "How To"
+		Me.Button2.UseVisualStyleBackColor = True
 		'
 		'ChangeClientNumber
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 450)
+		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.ComboBox2)
@@ -261,4 +272,5 @@ Partial Class ChangeClientNumber
 	Friend WithEvents testdb As RadioButton
 	Friend WithEvents GroupBox2 As GroupBox
 	Friend WithEvents Label2 As Label
+	Friend WithEvents Button2 As Button
 End Class

@@ -77,12 +77,13 @@ Partial Class Reporting
 		Me.CustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ARCStatusHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ReturnedDateMassChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.AccountStatusCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.EmailUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
-		Me.AccountStatusCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.StatusStrip.SuspendLayout()
 		Me.MenuStrip1.SuspendLayout()
 		Me.SuspendLayout()
@@ -348,7 +349,7 @@ Partial Class Reporting
 		'
 		'ToolsToolStripMenuItem
 		'
-		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem, Me.ChangeCustomerNumberToolStripMenuItem, Me.FeeCodeChangeToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.ARCStatusHistoryToolStripMenuItem, Me.ReturnedDateMassChangeToolStripMenuItem, Me.AccountStatusCheckToolStripMenuItem})
+		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem, Me.ChangeCustomerNumberToolStripMenuItem, Me.ReturnedDateMassChangeToolStripMenuItem, Me.FeeCodeChangeToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.ARCStatusHistoryToolStripMenuItem, Me.AccountStatusCheckToolStripMenuItem, Me.EmailUpdateToolStripMenuItem})
 		Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
 		Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
 		Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -357,62 +358,74 @@ Partial Class Reporting
 		'LastARCStatusToolStripMenuItem
 		'
 		Me.LastARCStatusToolStripMenuItem.Name = "LastARCStatusToolStripMenuItem"
-		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.LastARCStatusToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.LastARCStatusToolStripMenuItem.Text = "&Last ARC Status"
 		'
 		'GenericQueryToolStripMenuItem
 		'
 		Me.GenericQueryToolStripMenuItem.Name = "GenericQueryToolStripMenuItem"
-		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.GenericQueryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.GenericQueryToolStripMenuItem.Text = "Generic Query"
 		'
 		'AccountQueryToolStripMenuItem
 		'
 		Me.AccountQueryToolStripMenuItem.Name = "AccountQueryToolStripMenuItem"
-		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.AccountQueryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.AccountQueryToolStripMenuItem.Text = "Account Query"
 		'
 		'AFFInputFixToolStripMenuItem
 		'
 		Me.AFFInputFixToolStripMenuItem.Name = "AFFInputFixToolStripMenuItem"
-		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.AFFInputFixToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.AFFInputFixToolStripMenuItem.Text = "AFF Input Fix"
 		'
 		'DateMaintenanceToolStripMenuItem
 		'
 		Me.DateMaintenanceToolStripMenuItem.Name = "DateMaintenanceToolStripMenuItem"
-		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.DateMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.DateMaintenanceToolStripMenuItem.Text = "Date Maintenance"
 		'
 		'ChangeCustomerNumberToolStripMenuItem
 		'
 		Me.ChangeCustomerNumberToolStripMenuItem.Name = "ChangeCustomerNumberToolStripMenuItem"
-		Me.ChangeCustomerNumberToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.ChangeCustomerNumberToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.ChangeCustomerNumberToolStripMenuItem.Text = "Change Customer Number"
 		'
 		'FeeCodeChangeToolStripMenuItem
 		'
 		Me.FeeCodeChangeToolStripMenuItem.Name = "FeeCodeChangeToolStripMenuItem"
-		Me.FeeCodeChangeToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.FeeCodeChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.FeeCodeChangeToolStripMenuItem.Text = "Fee Code Change"
 		'
 		'CustomerToolStripMenuItem
 		'
 		Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
-		Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.CustomerToolStripMenuItem.Text = "Select Customer"
 		'
 		'ARCStatusHistoryToolStripMenuItem
 		'
 		Me.ARCStatusHistoryToolStripMenuItem.Name = "ARCStatusHistoryToolStripMenuItem"
-		Me.ARCStatusHistoryToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+		Me.ARCStatusHistoryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.ARCStatusHistoryToolStripMenuItem.Text = "ARC Status History"
 		'
 		'ReturnedDateMassChangeToolStripMenuItem
 		'
 		Me.ReturnedDateMassChangeToolStripMenuItem.Name = "ReturnedDateMassChangeToolStripMenuItem"
-		Me.ReturnedDateMassChangeToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
-		Me.ReturnedDateMassChangeToolStripMenuItem.Text = "Returned Date Mass change"
+		Me.ReturnedDateMassChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.ReturnedDateMassChangeToolStripMenuItem.Text = "Change Returned Date"
+		'
+		'AccountStatusCheckToolStripMenuItem
+		'
+		Me.AccountStatusCheckToolStripMenuItem.Name = "AccountStatusCheckToolStripMenuItem"
+		Me.AccountStatusCheckToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.AccountStatusCheckToolStripMenuItem.Text = "Account Status Check"
+		'
+		'EmailUpdateToolStripMenuItem
+		'
+		Me.EmailUpdateToolStripMenuItem.Name = "EmailUpdateToolStripMenuItem"
+		Me.EmailUpdateToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.EmailUpdateToolStripMenuItem.Text = "Email Update"
 		'
 		'HelpToolStripMenuItem
 		'
@@ -444,12 +457,6 @@ Partial Class Reporting
 		'
 		Me.stopwatch.Enabled = True
 		Me.stopwatch.Interval = 1
-		'
-		'AccountStatusCheckToolStripMenuItem
-		'
-		Me.AccountStatusCheckToolStripMenuItem.Name = "AccountStatusCheckToolStripMenuItem"
-		Me.AccountStatusCheckToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
-		Me.AccountStatusCheckToolStripMenuItem.Text = "Account Status Check"
 		'
 		'Reporting
 		'
@@ -532,4 +539,5 @@ Partial Class Reporting
 	Friend WithEvents ARCStatusHistoryToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents ReturnedDateMassChangeToolStripMenuItem As ToolStripMenuItem
 	Friend WithEvents AccountStatusCheckToolStripMenuItem As ToolStripMenuItem
+	Friend WithEvents EmailUpdateToolStripMenuItem As ToolStripMenuItem
 End Class
