@@ -44,9 +44,7 @@ Partial Class SQLExport
 		Me.LimitBox = New System.Windows.Forms.TextBox()
 		Me.SheetLimit = New System.Windows.Forms.RadioButton()
 		Me.sheetall = New System.Windows.Forms.RadioButton()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
-		Me.Label2 = New System.Windows.Forms.Label()
+		Me.CustList1 = New reports.CustList()
 		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox3.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
@@ -152,7 +150,7 @@ Partial Class SQLExport
 		'
 		'SQLBox
 		'
-		Me.SQLBox.Location = New System.Drawing.Point(118, 51)
+		Me.SQLBox.Location = New System.Drawing.Point(118, 104)
 		Me.SQLBox.Name = "SQLBox"
 		Me.SQLBox.Size = New System.Drawing.Size(588, 154)
 		Me.SQLBox.TabIndex = 71
@@ -161,7 +159,7 @@ Partial Class SQLExport
 		'QueryButton
 		'
 		Me.QueryButton.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.QueryButton.Location = New System.Drawing.Point(12, 52)
+		Me.QueryButton.Location = New System.Drawing.Point(12, 105)
 		Me.QueryButton.Name = "QueryButton"
 		Me.QueryButton.Size = New System.Drawing.Size(100, 23)
 		Me.QueryButton.TabIndex = 72
@@ -171,7 +169,7 @@ Partial Class SQLExport
 		'ExportButton
 		'
 		Me.ExportButton.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.ExportButton.Location = New System.Drawing.Point(12, 110)
+		Me.ExportButton.Location = New System.Drawing.Point(15, 142)
 		Me.ExportButton.Name = "ExportButton"
 		Me.ExportButton.Size = New System.Drawing.Size(100, 23)
 		Me.ExportButton.TabIndex = 73
@@ -210,7 +208,7 @@ Partial Class SQLExport
 		Me.GroupBox4.Controls.Add(Me.LimitBox)
 		Me.GroupBox4.Controls.Add(Me.SheetLimit)
 		Me.GroupBox4.Controls.Add(Me.sheetall)
-		Me.GroupBox4.Location = New System.Drawing.Point(118, 211)
+		Me.GroupBox4.Location = New System.Drawing.Point(118, 264)
 		Me.GroupBox4.Name = "GroupBox4"
 		Me.GroupBox4.Size = New System.Drawing.Size(483, 66)
 		Me.GroupBox4.TabIndex = 75
@@ -263,40 +261,20 @@ Partial Class SQLExport
 		Me.sheetall.Text = "ANo Limit"
 		Me.sheetall.UseVisualStyleBackColor = True
 		'
-		'Button1
+		'CustList1
 		'
-		Me.Button1.Location = New System.Drawing.Point(15, 81)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(97, 23)
-		Me.Button1.TabIndex = 76
-		Me.Button1.Text = "Customer"
-		Me.Button1.UseVisualStyleBackColor = True
-		'
-		'TextBox1
-		'
-		Me.TextBox1.Location = New System.Drawing.Point(118, 299)
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(588, 20)
-		Me.TextBox1.TabIndex = 77
-		'
-		'Label2
-		'
-		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(37, 305)
-		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(73, 13)
-		Me.Label2.TabIndex = 78
-		Me.Label2.Text = "@customer = "
+		Me.CustList1.Location = New System.Drawing.Point(15, 43)
+		Me.CustList1.Name = "CustList1"
+		Me.CustList1.Size = New System.Drawing.Size(602, 55)
+		Me.CustList1.TabIndex = 79
 		'
 		'SQLExport
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(1269, 680)
+		Me.ClientSize = New System.Drawing.Size(1269, 866)
 		Me.ControlBox = False
-		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.TextBox1)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.CustList1)
 		Me.Controls.Add(Me.GroupBox4)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.ExportButton)
@@ -344,7 +322,5 @@ Partial Class SQLExport
     Friend WithEvents sheetall As RadioButton
     Friend WithEvents label1 As Label
     Friend WithEvents Fmtbox As TextBox
-	Friend WithEvents Button1 As Button
-	Friend WithEvents TextBox1 As TextBox
-	Friend WithEvents Label2 As Label
+	Friend WithEvents CustList1 As CustList
 End Class

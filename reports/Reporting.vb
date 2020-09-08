@@ -1,7 +1,7 @@
 ﻿Imports System.Windows.Forms
 
 Public Class Reporting
-	Public customerlist As String
+
 	Private Sub Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         IsMdiContainer = True
 		If Environment.UserName = "edward.hall" Then ToolsToolStripMenuItem.Visible = True
@@ -243,5 +243,9 @@ Public Class Reporting
 
 	Private Sub EmailUpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmailUpdateToolStripMenuItem.Click
 		OpenChild(My.Forms.Emailupdate)
+	End Sub
+
+	Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs)
+		OpenChild(My.Forms.Customer)
 	End Sub
 End Class

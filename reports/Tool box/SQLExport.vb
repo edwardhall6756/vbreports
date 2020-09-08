@@ -40,7 +40,7 @@ Public Class SQLExport
 
     Private Sub QueryButton_Click(sender As Object, e As EventArgs) Handles QueryButton.Click
         CheckForIllegalCrossThreadCalls = False
-		vsql = SQLBox.Text.Replace("@customer", TextBox1.Text)
+		vsql = SQLBox.Text.Replace("@customer", CustList1.Clist)
 
 		ActivityTextBox.Text = "Running Query."
         WriteTime()
@@ -186,8 +186,5 @@ Public Class SQLExport
         End If
     End Sub
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-		My.Forms.SelectCustomer.ShowDialog()
-		TextBox1.Text = "'" + My.Forms.Reporting.customerlist.Replace(",", "','") + "'"
-	End Sub
+
 End Class

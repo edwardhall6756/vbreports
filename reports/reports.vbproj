@@ -103,58 +103,58 @@
     <Compile Include="AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountQuery.Designer.vb">
+    <Compile Include="Tool box\AccountQuery.Designer.vb">
       <DependentUpon>AccountQuery.vb</DependentUpon>
     </Compile>
-    <Compile Include="AccountQuery.vb">
+    <Compile Include="Tool box\AccountQuery.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountStatuschk.Designer.vb">
+    <Compile Include="Tool box\AccountStatuschk.Designer.vb">
       <DependentUpon>AccountStatuschk.vb</DependentUpon>
     </Compile>
-    <Compile Include="AccountStatuschk.vb">
+    <Compile Include="Tool box\AccountStatuschk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AFFfix.Designer.vb">
+    <Compile Include="Tool box\AFFfix.Designer.vb">
       <DependentUpon>AFFfix.vb</DependentUpon>
     </Compile>
-    <Compile Include="AFFfix.vb">
+    <Compile Include="Tool box\AFFfix.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ARCStatusHistory.Designer.vb">
+    <Compile Include="Tool box\ARCStatusHistory.Designer.vb">
       <DependentUpon>ARCStatusHistory.vb</DependentUpon>
     </Compile>
-    <Compile Include="ARCStatusHistory.vb">
+    <Compile Include="Tool box\ARCStatusHistory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Arrang45days.Designer.vb">
+    <Compile Include="Report forms\Arrang45days.Designer.vb">
       <DependentUpon>Arrang45days.vb</DependentUpon>
     </Compile>
-    <Compile Include="Arrang45days.vb">
+    <Compile Include="Report forms\Arrang45days.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="autobuildercount.Designer.vb">
+    <Compile Include="Report forms\autobuildercount.Designer.vb">
       <DependentUpon>autobuildercount.vb</DependentUpon>
     </Compile>
-    <Compile Include="autobuildercount.vb">
+    <Compile Include="Report forms\autobuildercount.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="autobuildercount2.Designer.vb">
+    <Compile Include="Report forms\autobuildercount2.Designer.vb">
       <DependentUpon>autobuildercount2.vb</DependentUpon>
     </Compile>
-    <Compile Include="autobuildercount2.vb">
+    <Compile Include="Report forms\autobuildercount2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BrokenPromises.Designer.vb">
+    <Compile Include="Report forms\BrokenPromises.Designer.vb">
       <DependentUpon>BrokenPromises.vb</DependentUpon>
     </Compile>
-    <Compile Include="BrokenPromises.vb">
+    <Compile Include="Report forms\BrokenPromises.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeClientNumber.Designer.vb">
+    <Compile Include="Tool box\ChangeClientNumber.Designer.vb">
       <DependentUpon>ChangeClientNumber.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChangeClientNumber.vb">
+    <Compile Include="Tool box\ChangeClientNumber.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="collect2000DataSet.Designer.vb">
@@ -165,95 +165,107 @@
     <Compile Include="collect2000DataSet.vb">
       <DependentUpon>collect2000DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="customer.Designer.vb">
+    <Compile Include="Tool box\CustList.Designer.vb">
+      <DependentUpon>CustList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tool box\CustList.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tool box\customer.Designer.vb">
       <DependentUpon>customer.vb</DependentUpon>
     </Compile>
-    <Compile Include="customer.vb">
+    <Compile Include="Tool box\customer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DateMaintenance.Designer.vb">
+    <Compile Include="Tool box\CustomerSelect.Designer.vb">
+      <DependentUpon>CustomerSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tool box\CustomerSelect.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tool box\DateMaintenance.Designer.vb">
       <DependentUpon>DateMaintenance.vb</DependentUpon>
     </Compile>
-    <Compile Include="DateMaintenance.vb">
+    <Compile Include="Tool box\DateMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DebtSettlement.Designer.vb">
+    <Compile Include="Report forms\DebtSettlement.Designer.vb">
       <DependentUpon>DebtSettlement.vb</DependentUpon>
     </Compile>
-    <Compile Include="DebtSettlement.vb">
+    <Compile Include="Report forms\DebtSettlement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="emailupdate.Designer.vb">
+    <Compile Include="Tool box\emailupdate.Designer.vb">
       <DependentUpon>emailupdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="emailupdate.vb">
+    <Compile Include="Tool box\emailupdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExeterBankruptcyCloses.Designer.vb">
+    <Compile Include="Report forms\ExeterBankruptcyCloses.Designer.vb">
       <DependentUpon>ExeterBankruptcyCloses.vb</DependentUpon>
     </Compile>
-    <Compile Include="ExeterBankruptcyCloses.vb">
+    <Compile Include="Report forms\ExeterBankruptcyCloses.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ExeterSifPif.Designer.vb">
+    <Compile Include="Report forms\ExeterSifPif.Designer.vb">
       <DependentUpon>ExeterSifPif.vb</DependentUpon>
     </Compile>
-    <Compile Include="ExeterSifPif.vb">
+    <Compile Include="Report forms\ExeterSifPif.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExportData.vb" />
-    <Compile Include="Exception8.Designer.vb">
+    <Compile Include="Report forms\Exception8.Designer.vb">
       <DependentUpon>Exception8.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception8.vb">
+    <Compile Include="Report forms\Exception8.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception2.Designer.vb">
+    <Compile Include="Report forms\Exception2.Designer.vb">
       <DependentUpon>Exception2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception2.vb">
+    <Compile Include="Report forms\Exception2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception5.Designer.vb">
+    <Compile Include="Report forms\Exception5.Designer.vb">
       <DependentUpon>Exception5.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception5.vb">
+    <Compile Include="Report forms\Exception5.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception6.Designer.vb">
+    <Compile Include="Report forms\Exception6.Designer.vb">
       <DependentUpon>Exception6.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception6.vb">
+    <Compile Include="Report forms\Exception6.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception4.Designer.vb">
+    <Compile Include="Report forms\Exception4.Designer.vb">
       <DependentUpon>Exception4.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception4.vb">
+    <Compile Include="Report forms\Exception4.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception7.Designer.vb">
+    <Compile Include="Report forms\Exception7.Designer.vb">
       <DependentUpon>Exception7.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception7.vb">
+    <Compile Include="Report forms\Exception7.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception3.Designer.vb">
+    <Compile Include="Report forms\Exception3.Designer.vb">
       <DependentUpon>Exception3.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception3.vb">
+    <Compile Include="Report forms\Exception3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Exception9.Designer.vb">
+    <Compile Include="Report forms\Exception9.Designer.vb">
       <DependentUpon>Exception9.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exception9.vb">
+    <Compile Include="Report forms\Exception9.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FeeCodeChg.Designer.vb">
+    <Compile Include="Tool box\FeeCodeChg.Designer.vb">
       <DependentUpon>FeeCodeChg.vb</DependentUpon>
     </Compile>
-    <Compile Include="FeeCodeChg.vb">
+    <Compile Include="Tool box\FeeCodeChg.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Help.Designer.vb">
@@ -262,76 +274,76 @@
     <Compile Include="Help.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LastARCStatus.Designer.vb">
+    <Compile Include="Tool box\LastARCStatus.Designer.vb">
       <DependentUpon>LastARCStatus.vb</DependentUpon>
     </Compile>
-    <Compile Include="LastARCStatus.vb">
+    <Compile Include="Tool box\LastARCStatus.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeReturnDate.Designer.vb">
+    <Compile Include="Tool box\ChangeReturnDate.Designer.vb">
       <DependentUpon>ChangeReturnDate.vb</DependentUpon>
     </Compile>
-    <Compile Include="ChangeReturnDate.vb">
+    <Compile Include="Tool box\ChangeReturnDate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewAgent.Designer.vb">
+    <Compile Include="Report forms\NewAgent.Designer.vb">
       <DependentUpon>NewAgent.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewAgent.vb">
+    <Compile Include="Report forms\NewAgent.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PCDDeletedReport.Designer.vb">
+    <Compile Include="Report forms\PCDDeletedReport.Designer.vb">
       <DependentUpon>PCDDeletedReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="PCDDeletedReport.vb">
+    <Compile Include="Report forms\PCDDeletedReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPAAudit.Designer.vb">
+    <Compile Include="Report forms\PPAAudit.Designer.vb">
       <DependentUpon>PPAAudit.vb</DependentUpon>
     </Compile>
-    <Compile Include="PPAAudit.vb">
+    <Compile Include="Report forms\PPAAudit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPACredit1.Designer.vb">
+    <Compile Include="Report forms\PPACredit1.Designer.vb">
       <DependentUpon>PPACredit1.vb</DependentUpon>
     </Compile>
-    <Compile Include="PPACredit1.vb">
+    <Compile Include="Report forms\PPACredit1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPAException.Designer.vb">
+    <Compile Include="Report forms\PPAException.Designer.vb">
       <DependentUpon>PPAException.vb</DependentUpon>
     </Compile>
-    <Compile Include="PPAException.vb">
+    <Compile Include="Report forms\PPAException.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcessedLetterLinkExp.Designer.vb">
+    <Compile Include="Report forms\ProcessedLetterLinkExp.Designer.vb">
       <DependentUpon>ProcessedLetterLinkExp.vb</DependentUpon>
     </Compile>
-    <Compile Include="ProcessedLetterLinkExp.vb">
+    <Compile Include="Report forms\ProcessedLetterLinkExp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PendingLetterLinkExp.Designer.vb">
+    <Compile Include="Report forms\PendingLetterLinkExp.Designer.vb">
       <DependentUpon>PendingLetterLinkExp.vb</DependentUpon>
     </Compile>
-    <Compile Include="PendingLetterLinkExp.vb">
+    <Compile Include="Report forms\PendingLetterLinkExp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="recordingcount.Designer.vb">
+    <Compile Include="Report forms\recordingcount.Designer.vb">
       <DependentUpon>recordingcount.vb</DependentUpon>
     </Compile>
-    <Compile Include="recordingcount.vb">
+    <Compile Include="Report forms\recordingcount.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="recordings2weeks.Designer.vb">
+    <Compile Include="Report forms\recordings2weeks.Designer.vb">
       <DependentUpon>recordings2weeks.vb</DependentUpon>
     </Compile>
-    <Compile Include="recordings2weeks.vb">
+    <Compile Include="Report forms\recordings2weeks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Removed737Q.Designer.vb">
+    <Compile Include="Report forms\Removed737Q.Designer.vb">
       <DependentUpon>Removed737Q.vb</DependentUpon>
     </Compile>
-    <Compile Include="Removed737Q.vb">
+    <Compile Include="Report forms\Removed737Q.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Resource1.Designer.vb">
@@ -339,22 +351,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="SelectCustomer.Designer.vb">
+    <Compile Include="Tool box\SelectCustomer.Designer.vb">
       <DependentUpon>SelectCustomer.vb</DependentUpon>
     </Compile>
-    <Compile Include="SelectCustomer.vb">
+    <Compile Include="Tool box\SelectCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="settlement.Designer.vb">
+    <Compile Include="Report forms\settlement.Designer.vb">
       <DependentUpon>settlement.vb</DependentUpon>
     </Compile>
-    <Compile Include="settlement.vb">
+    <Compile Include="Report forms\settlement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPACreditAudit.vb">
+    <Compile Include="Report forms\PPACreditAudit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PPACreditAudit.Designer.vb">
+    <Compile Include="Report forms\PPACreditAudit.Designer.vb">
       <DependentUpon>PPACreditAudit.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -385,16 +397,16 @@
     <Compile Include="Reporting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SQLExport.Designer.vb">
+    <Compile Include="Tool box\SQLExport.Designer.vb">
       <DependentUpon>SQLExport.vb</DependentUpon>
     </Compile>
-    <Compile Include="SQLExport.vb">
+    <Compile Include="Tool box\SQLExport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TSISMERestrictionRemoval.Designer.vb">
+    <Compile Include="Tool box\TSISMERestrictionRemoval.Designer.vb">
       <DependentUpon>TSISMERestrictionRemoval.vb</DependentUpon>
     </Compile>
-    <Compile Include="TSISMERestrictionRemoval.vb">
+    <Compile Include="Tool box\TSISMERestrictionRemoval.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -402,115 +414,121 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountQuery.resx">
+    <EmbeddedResource Include="Tool box\AccountQuery.resx">
       <DependentUpon>AccountQuery.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountStatuschk.resx">
+    <EmbeddedResource Include="Tool box\AccountStatuschk.resx">
       <DependentUpon>AccountStatuschk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AFFfix.resx">
+    <EmbeddedResource Include="Tool box\AFFfix.resx">
       <DependentUpon>AFFfix.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ARCStatusHistory.resx">
+    <EmbeddedResource Include="Tool box\ARCStatusHistory.resx">
       <DependentUpon>ARCStatusHistory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Arrang45days.resx">
+    <EmbeddedResource Include="Report forms\Arrang45days.resx">
       <DependentUpon>Arrang45days.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="autobuildercount.resx">
+    <EmbeddedResource Include="Report forms\autobuildercount.resx">
       <DependentUpon>autobuildercount.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="autobuildercount2.resx">
+    <EmbeddedResource Include="Report forms\autobuildercount2.resx">
       <DependentUpon>autobuildercount2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BrokenPromises.resx">
+    <EmbeddedResource Include="Report forms\BrokenPromises.resx">
       <DependentUpon>BrokenPromises.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeClientNumber.resx">
+    <EmbeddedResource Include="Tool box\ChangeClientNumber.resx">
       <DependentUpon>ChangeClientNumber.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="customer.resx">
+    <EmbeddedResource Include="Tool box\CustList.resx">
+      <DependentUpon>CustList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool box\customer.resx">
       <DependentUpon>customer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DateMaintenance.resx">
+    <EmbeddedResource Include="Tool box\CustomerSelect.resx">
+      <DependentUpon>CustomerSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool box\DateMaintenance.resx">
       <DependentUpon>DateMaintenance.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DebtSettlement.resx">
+    <EmbeddedResource Include="Report forms\DebtSettlement.resx">
       <DependentUpon>DebtSettlement.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="emailupdate.resx">
+    <EmbeddedResource Include="Tool box\emailupdate.resx">
       <DependentUpon>emailupdate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExeterBankruptcyCloses.resx">
+    <EmbeddedResource Include="Report forms\ExeterBankruptcyCloses.resx">
       <DependentUpon>ExeterBankruptcyCloses.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExeterSifPif.resx">
+    <EmbeddedResource Include="Report forms\ExeterSifPif.resx">
       <DependentUpon>ExeterSifPif.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception8.resx">
+    <EmbeddedResource Include="Report forms\Exception8.resx">
       <DependentUpon>Exception8.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception2.resx">
+    <EmbeddedResource Include="Report forms\Exception2.resx">
       <DependentUpon>Exception2.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception5.resx">
+    <EmbeddedResource Include="Report forms\Exception5.resx">
       <DependentUpon>Exception5.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception6.resx">
+    <EmbeddedResource Include="Report forms\Exception6.resx">
       <DependentUpon>Exception6.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception4.resx">
+    <EmbeddedResource Include="Report forms\Exception4.resx">
       <DependentUpon>Exception4.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception7.resx">
+    <EmbeddedResource Include="Report forms\Exception7.resx">
       <DependentUpon>Exception7.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception3.resx">
+    <EmbeddedResource Include="Report forms\Exception3.resx">
       <DependentUpon>Exception3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Exception9.resx">
+    <EmbeddedResource Include="Report forms\Exception9.resx">
       <DependentUpon>Exception9.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FeeCodeChg.resx">
+    <EmbeddedResource Include="Tool box\FeeCodeChg.resx">
       <DependentUpon>FeeCodeChg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LastARCStatus.resx">
+    <EmbeddedResource Include="Tool box\LastARCStatus.resx">
       <DependentUpon>LastARCStatus.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChangeReturnDate.resx">
+    <EmbeddedResource Include="Tool box\ChangeReturnDate.resx">
       <DependentUpon>ChangeReturnDate.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAgent.resx">
+    <EmbeddedResource Include="Report forms\NewAgent.resx">
       <DependentUpon>NewAgent.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PCDDeletedReport.resx">
+    <EmbeddedResource Include="Report forms\PCDDeletedReport.resx">
       <DependentUpon>PCDDeletedReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PPAAudit.resx">
+    <EmbeddedResource Include="Report forms\PPAAudit.resx">
       <DependentUpon>PPAAudit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PPACredit1.resx">
+    <EmbeddedResource Include="Report forms\PPACredit1.resx">
       <DependentUpon>PPACredit1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PPAException.resx">
+    <EmbeddedResource Include="Report forms\PPAException.resx">
       <DependentUpon>PPAException.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProcessedLetterLinkExp.resx">
+    <EmbeddedResource Include="Report forms\ProcessedLetterLinkExp.resx">
       <DependentUpon>ProcessedLetterLinkExp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PendingLetterLinkExp.resx">
+    <EmbeddedResource Include="Report forms\PendingLetterLinkExp.resx">
       <DependentUpon>PendingLetterLinkExp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="recordingcount.resx">
+    <EmbeddedResource Include="Report forms\recordingcount.resx">
       <DependentUpon>recordingcount.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="recordings2weeks.resx">
+    <EmbeddedResource Include="Report forms\recordings2weeks.resx">
       <DependentUpon>recordings2weeks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Removed737Q.resx">
+    <EmbeddedResource Include="Report forms\Removed737Q.resx">
       <DependentUpon>Removed737Q.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource1.resx">
@@ -518,13 +536,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectCustomer.resx">
+    <EmbeddedResource Include="Tool box\SelectCustomer.resx">
       <DependentUpon>SelectCustomer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="settlement.resx">
+    <EmbeddedResource Include="Report forms\settlement.resx">
       <DependentUpon>settlement.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PPACreditAudit.resx">
+    <EmbeddedResource Include="Report forms\PPACreditAudit.resx">
       <DependentUpon>PPACreditAudit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -539,10 +557,10 @@
     <EmbeddedResource Include="Reporting.resx">
       <DependentUpon>Reporting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SQLExport.resx">
+    <EmbeddedResource Include="Tool box\SQLExport.resx">
       <DependentUpon>SQLExport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TSISMERestrictionRemoval.resx">
+    <EmbeddedResource Include="Tool box\TSISMERestrictionRemoval.resx">
       <DependentUpon>TSISMERestrictionRemoval.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -616,5 +634,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

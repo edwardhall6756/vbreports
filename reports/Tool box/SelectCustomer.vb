@@ -7,9 +7,10 @@ Public Class SelectCustomer
 		If CustomerIDListBox.SelectedIndices.Count > 0 Then
 			For Each xitem In CustomerIDListBox.SelectedItems
 				clist += "," + xitem(0).ToString
-			Next
 
-			My.Forms.Reporting.customerlist = clist.Substring(1)
+			Next
+			clist = clist.Substring(1)
+			'My.Forms.Reporting.customerlist = clist
 		End If
 
 		Me.Close()

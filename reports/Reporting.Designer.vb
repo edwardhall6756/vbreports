@@ -66,6 +66,9 @@ Partial Class Reporting
 		Me.UstoimerNumberChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AbortToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.LastARCStatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.GenericQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,15 +76,12 @@ Partial Class Reporting
 		Me.AFFInputFixToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.DateMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ChangeCustomerNumberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+		Me.ReturnedDateMassChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.FeeCodeChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.CustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ARCStatusHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.ReturnedDateMassChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.AccountStatusCheckToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.EmailUpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-		Me.IinstructionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
 		Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
 		Me.stopwatch = New System.Windows.Forms.Timer(Me.components)
 		Me.StatusStrip.SuspendLayout()
@@ -106,7 +106,7 @@ Partial Class Reporting
 		'
 		'MenuStrip1
 		'
-		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem, Me.MaintenanceToolStripMenuItem, Me.AbortToolStripMenuItem, Me.CloseToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.ExitToolStripMenuItem1})
+		Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PPACreditAuditToolStripMenuItem, Me.MaintenanceToolStripMenuItem, Me.AbortToolStripMenuItem, Me.CloseToolStripMenuItem, Me.HelpToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.ExitToolStripMenuItem1})
 		Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
 		Me.MenuStrip1.Name = "MenuStrip1"
 		Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
@@ -347,6 +347,25 @@ Partial Class Reporting
 		Me.CloseToolStripMenuItem.Text = "&Close"
 		Me.CloseToolStripMenuItem.ToolTipText = "Close open form"
 		'
+		'HelpToolStripMenuItem
+		'
+		Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.IinstructionsToolStripMenuItem})
+		Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+		Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+		Me.HelpToolStripMenuItem.Text = "&About"
+		'
+		'AboutToolStripMenuItem
+		'
+		Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+		Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+		Me.AboutToolStripMenuItem.Text = "About this application"
+		'
+		'IinstructionsToolStripMenuItem
+		'
+		Me.IinstructionsToolStripMenuItem.Name = "IinstructionsToolStripMenuItem"
+		Me.IinstructionsToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+		Me.IinstructionsToolStripMenuItem.Text = "instructions"
+		'
 		'ToolsToolStripMenuItem
 		'
 		Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LastARCStatusToolStripMenuItem, Me.GenericQueryToolStripMenuItem, Me.AccountQueryToolStripMenuItem, Me.AFFInputFixToolStripMenuItem, Me.DateMaintenanceToolStripMenuItem, Me.ChangeCustomerNumberToolStripMenuItem, Me.ReturnedDateMassChangeToolStripMenuItem, Me.FeeCodeChangeToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.ARCStatusHistoryToolStripMenuItem, Me.AccountStatusCheckToolStripMenuItem, Me.EmailUpdateToolStripMenuItem})
@@ -391,6 +410,12 @@ Partial Class Reporting
 		Me.ChangeCustomerNumberToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.ChangeCustomerNumberToolStripMenuItem.Text = "Change Customer Number"
 		'
+		'ReturnedDateMassChangeToolStripMenuItem
+		'
+		Me.ReturnedDateMassChangeToolStripMenuItem.Name = "ReturnedDateMassChangeToolStripMenuItem"
+		Me.ReturnedDateMassChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+		Me.ReturnedDateMassChangeToolStripMenuItem.Text = "Change Returned Date"
+		'
 		'FeeCodeChangeToolStripMenuItem
 		'
 		Me.FeeCodeChangeToolStripMenuItem.Name = "FeeCodeChangeToolStripMenuItem"
@@ -409,12 +434,6 @@ Partial Class Reporting
 		Me.ARCStatusHistoryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.ARCStatusHistoryToolStripMenuItem.Text = "ARC Status History"
 		'
-		'ReturnedDateMassChangeToolStripMenuItem
-		'
-		Me.ReturnedDateMassChangeToolStripMenuItem.Name = "ReturnedDateMassChangeToolStripMenuItem"
-		Me.ReturnedDateMassChangeToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-		Me.ReturnedDateMassChangeToolStripMenuItem.Text = "Change Returned Date"
-		'
 		'AccountStatusCheckToolStripMenuItem
 		'
 		Me.AccountStatusCheckToolStripMenuItem.Name = "AccountStatusCheckToolStripMenuItem"
@@ -426,25 +445,6 @@ Partial Class Reporting
 		Me.EmailUpdateToolStripMenuItem.Name = "EmailUpdateToolStripMenuItem"
 		Me.EmailUpdateToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
 		Me.EmailUpdateToolStripMenuItem.Text = "Email Update"
-		'
-		'HelpToolStripMenuItem
-		'
-		Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.IinstructionsToolStripMenuItem})
-		Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-		Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-		Me.HelpToolStripMenuItem.Text = "&About"
-		'
-		'AboutToolStripMenuItem
-		'
-		Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-		Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-		Me.AboutToolStripMenuItem.Text = "About this application"
-		'
-		'IinstructionsToolStripMenuItem
-		'
-		Me.IinstructionsToolStripMenuItem.Name = "IinstructionsToolStripMenuItem"
-		Me.IinstructionsToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-		Me.IinstructionsToolStripMenuItem.Text = "instructions"
 		'
 		'ExitToolStripMenuItem1
 		'
