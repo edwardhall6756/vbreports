@@ -195,6 +195,12 @@
     <Compile Include="Report forms\DebtSettlement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tool box\DataChangeWarning.Designer.vb">
+      <DependentUpon>DataChangeWarning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tool box\DataChangeWarning.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tool box\emailupdate.Designer.vb">
       <DependentUpon>emailupdate.vb</DependentUpon>
     </Compile>
@@ -351,6 +357,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Tool box\PostDatedTransDeleted.Designer.vb">
+      <DependentUpon>PostDatedTransDeleted.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tool box\PostDatedTransDeleted.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tool box\SelectCustomer.Designer.vb">
       <DependentUpon>SelectCustomer.vb</DependentUpon>
     </Compile>
@@ -456,6 +468,9 @@
     <EmbeddedResource Include="Report forms\DebtSettlement.resx">
       <DependentUpon>DebtSettlement.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tool box\DataChangeWarning.resx">
+      <DependentUpon>DataChangeWarning.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tool box\emailupdate.resx">
       <DependentUpon>emailupdate.vb</DependentUpon>
     </EmbeddedResource>
@@ -535,6 +550,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tool box\PostDatedTransDeleted.resx">
+      <DependentUpon>PostDatedTransDeleted.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tool box\SelectCustomer.resx">
       <DependentUpon>SelectCustomer.vb</DependentUpon>

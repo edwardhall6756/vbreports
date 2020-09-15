@@ -27,7 +27,7 @@ Public Class ChangeReturnDate
 	Dim cn As SqlConnection
 	Private vsql = "declare @oldCode as varchar(10)
  set @oldcode=isnull((select m.returned from master m with(nolock) where number=@number),'')
-
+if @oldcode <> '' begin
 INSERT INTO notes
 (number, created, user0, [action], result, comment)
 VALUES(@number, getdate(), 'SYSTEM', 'RETND', 'CHNG', 'Returned Date CHANGED | ' + @oldcode + ' | ' + @newcode)
@@ -36,7 +36,11 @@ update master
 set returned = @newcode
 from master with (rowlock)
 where number = @number
-"
+end "
+	Private verifysql = "select *
+from master (nolock)
+where number=@number
+and closed is not null"
 	Private Sub Stopwatch_Tick(sender As Object, e As EventArgs) Handles StopWatch.Tick
 
 	End Sub
@@ -102,6 +106,7 @@ where number = @number
 		Tmin = 0
 		Thour = 0
 		ActivityTextBox.Text = "Successful excel load"
+		My.Computer.FileSystem.DeleteFile(fn)
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -123,15 +128,24 @@ where number = @number
 	Private Sub MakeChange_Click(sender As Object, e As EventArgs) Handles MakeChange.Click
 		CheckForIllegalCrossThreadCalls = False
 		Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or MsgBoxStyle.Critical
-		Dim msg = "You are about to make a mass change to Returned Dates. 
-Do you want to continue?"
+		Dim msg = "Hey!  You are about to make a mass change to Returned Dates on " + Me.ACount.Text + " accounts.  
+
+Are you sure this is OK?"
 		Dim title = "Data Changing Request"
-		Dim response = MsgBox(msg, style, title)
-		If response = MsgBoxResult.Yes Then
-			msg = "This will change the Returned dates of these accounts. 
-Are you certain this is what you want to do?"
-			response = MsgBox(msg, style, title)
-			If response = MsgBoxResult.Yes Then
+
+		DataChangeWarning.Infolbl.Text = msg
+		DataChangeWarning.Font = New Font(DataChangeWarning.Font, FontStyle.Bold)
+		DataChangeWarning.Text = title
+		If DataChangeWarning.ShowDialog = DialogResult.OK Then
+			msg = "So you are sure you want to change the Returned dates of these " + Me.ACount.Text + " accounts. 
+Are you really sure this is ok?"
+			title = "Confirm data change request"
+			DataChangeWarning.Infolbl.Text = msg
+			DataChangeWarning.Font = New Font(DataChangeWarning.Font, FontStyle.Underline)
+			DataChangeWarning.Text = title
+
+			If DataChangeWarning.ShowDialog = DialogResult.OK Then
+				MsgBox("OK here we go.")
 				ActivityTextBox.Text = "Changing old customer code "
 				WriteTime()
 				StopWatch.Enabled = True
@@ -149,23 +163,45 @@ Are you certain this is what you want to do?"
 		Try
 			Cursor = Cursors.WaitCursor
 			'Dim cmd As New SqlCommand(vsql)
-
-			cn.Open()
+			Dim exp As New DataTable
+			exp.Columns.Add("Number")
+			exp.Columns.Add("reason")
+			If cn.State = 0 Then cn.Open()
 			Dim cm1 As SqlCommand = New SqlCommand(vsql, cn)
 			cm1.Parameters.AddWithValue("@number", "000000000")
 			cm1.Parameters.AddWithValue("@newcode", "000000000")
+			Dim vm1 As New SqlDataAdapter(verifysql, cn.ConnectionString)
+			vm1.SelectCommand.Parameters.AddWithValue("@number", "000000000")
 			'	cm1.Parameters.AddWithValue("@newcode", TextBox1.Text)
 			count = 0
 			For Each row As DataGridViewRow In DataGridView1.Rows
 				row.Selected = True
 				DataGridView1.FirstDisplayedScrollingRowIndex = row.Index
 				Dim obj(row.Cells.Count - 1) As Object
+				If FindAccounts(row.Cells(fcol).Value) Then
+					vm1.SelectCommand.Parameters("@number").Value = row.Cells(fcol).Value
+					Dim vt As New DataTable
+					vm1.Fill(vt)
+					If vt.Rows.Count > 0 Then
+						cm1.Parameters("@number").Value = row.Cells(fcol).Value
+						cm1.Parameters("@newcode").Value = row.Cells(ocol).Value
+						Rcount = cm1.ExecuteNonQuery()
+						If Rcount > 0 Then
+							count += 1
+						End If
+					Else
+						Dim nr() As String = {"", ""}
+						nr(0) = row.Cells(fcol).Value
+						nr(1) = "Account Not closed. You cannot set return Date on open accounts."
+						exp.Rows.Add(nr)
+					End If
+				Else
+					Dim nr() As String = {"", ""}
+					nr(0) = row.Cells(fcol).Value
+					nr(1) = "Account Not not updated can not find account to update."
+					exp.Rows.Add(nr)
 
-				cm1.Parameters("@number").Value = row.Cells(fcol).Value
-				cm1.Parameters("@newcode").Value = row.Cells(ocol).Value
-				Rcount = cm1.ExecuteNonQuery()
-				If Rcount > 0 Then count += 1
-
+				End If
 				WriteTime()
 				row.Selected = False
 			Next
@@ -178,17 +214,31 @@ Are you certain this is what you want to do?"
 			Tmin = 0
 			Thour = 0
 			ActivityTextBox.Text = "Changed " + count.ToString + " customer numbers."
-
+			If exp.Rows.Count > 0 Then Exceptionrpt(exp)
 		Catch ex As System.Exception
 			Cursor = Cursors.Default
 			MessageBox.Show(ex.Message)
 			ActivityTextBox.Text = "Error in Changing customer numbers."
+		Finally
+			Cursor = Cursors.Default
+			Mcount = Tcount - count
+			If Mcount > 0 Then
+				MessageBox.Show(Mcount.ToString + " Accounts not found to update.")
+			End If
 		End Try
-		Cursor = Cursors.Default
-		Mcount = Tcount - count
-		If Mcount > 0 Then
-			MessageBox.Show(Mcount.ToString + " Accounts not found to update.")
-		End If
+
+	End Sub
+	Private Sub Exceptionrpt(ByRef exp As DataTable)
+		Dim exfile As New ExportData
+		With exfile
+			.ExcelFile = Path.ChangeExtension(fn, ".csv")
+			.Data = exp
+			.FirstRow = 1
+			.SheetFormating = "TT"
+
+		End With
+		exfile.Export()
+		MsgBox("Processing exceptions are in " + Path.ChangeExtension(fn, ".csv"))
 	End Sub
 	Private Function Mkchgenable() As Boolean
 		If fcol = ocol Then
@@ -259,4 +309,16 @@ Are you certain this is what you want to do?"
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 		MessageBox.Show(help)
 	End Sub
+	Private Function FindAccounts(ByVal number As String) As Boolean
+		If cn.State = 0 Then cn.Open()
+		Dim da As New SqlDataAdapter("SELECT [number],closed FROM [master] WITH (NOLOCK) where master.number=@number ", cn)
+		da.SelectCommand.Parameters.AddWithValue("@number", number)
+		Dim dt As New DataTable
+		da.Fill(dt)
+		If dt.Rows.Count = 0 Then
+			FindAccounts = False
+		Else
+			FindAccounts = True
+		End If
+	End Function
 End Class

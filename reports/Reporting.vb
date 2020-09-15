@@ -225,9 +225,9 @@ Public Class Reporting
 		OpenChild(My.Forms.DateMaintenance)
 	End Sub
 
-	Private Sub UstoimerNumberChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UstoimerNumberChangeToolStripMenuItem.Click
-		OpenChild(My.Forms.ChangeClientNumber)
-	End Sub
+	'Private Sub UstoimerNumberChangeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UstoimerNumberChangeToolStripMenuItem.Click
+	'	OpenChild(My.Forms.ChangeClientNumber)
+	'End Sub
 
 	Private Sub ARCStatusHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ARCStatusHistoryToolStripMenuItem.Click
 		OpenChild(My.Forms.ARCStatusHistory)
@@ -247,5 +247,13 @@ Public Class Reporting
 
 	Private Sub TestToolStripMenuItem_Click(sender As Object, e As EventArgs)
 		OpenChild(My.Forms.Customer)
+	End Sub
+
+	Private Sub PostDatedTransDeletedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PostDatedTransDeletedToolStripMenuItem.Click
+		OpenChild(My.Forms.PostDatedTransDeleted)
+	End Sub
+
+	Private Sub MassChangeReturnedDatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MassChangeReturnedDatesToolStripMenuItem.Click
+		OpenChild(My.Forms.ChangeReturnDate)
 	End Sub
 End Class
